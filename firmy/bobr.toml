@@ -1,0 +1,26 @@
+[firma]
+nazev = "Stěhování Bobr"
+sidlo = "Zlín"
+oblast = "celá Morava"
+
+[cenik]
+vuz_2_lide_za_hodinu = 990
+dalsi_clovek_za_hodinu = 350
+minimum_hodin = 2
+doprava_za_km = 25
+patro_bez_vytahu = 150
+baleni_za_hodinu = 450
+krabice_za_kus = 45
+tezky_predmet = 2500
+vikendovy_priplatek = 0.20
+
+[odhad_hodin]
+"1+kk" = 3
+"1+1" = 3
+"2+kk" = 4
+"2+1" = 4
+"3+kk" = 6
+"3+1" = 6
+"4+kk" = 8
+"4+1" = 8
+"dum" = 10
