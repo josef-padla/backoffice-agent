@@ -1,0 +1,13 @@
+{
+  "model": "claude-haiku-5-5",
+  "spravna_pole": 147,
+  "celkem_pole": 148,
+  "spravne_poptavky": 29,
+  "celkem_poptavek": 30,
+  "tokeny_in": 31398,
+  "tokeny_out": 9719,
+  "doba_s": 46.5,
+  "chyby": [
+    "P03 (úplná) odkud: čekal 'Fryšták', dostal 'Frýšták'"
+  ]
+}

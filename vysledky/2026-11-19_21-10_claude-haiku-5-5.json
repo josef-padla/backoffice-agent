@@ -1,0 +1,13 @@
+{
+  "model": "claude-haiku-5-5",
+  "spravna_pole": 149,
+  "celkem_pole": 150,
+  "spravne_poptavky": 29,
+  "celkem_poptavek": 30,
+  "tokeny_in": 31398,
+  "tokeny_out": 9742,
+  "doba_s": 47.6,
+  "chyby": [
+    "P13 (chybějící údaje) patro_odkud: čekal 4, dostal None"
+  ]
+}

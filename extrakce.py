@@ -33,35 +33,39 @@ NASTROJ = {
     },
 }
 
-poptavka = """Dobrý den, stěhujeme se 12. 3. z bytu 3+1 ve 3. patře (bez výtahu)
-ve Zlíně do domu v Otrokovicích. Kolik by to stálo? Díky, Jana Nováková"""
+PROMPT = ("Vytáhni údaje z této poptávky. Nic si nevymýšlej – co v ní není, "
+          "dej null a uveď to v chybejici_udaje.\n\n")
 
-odpoved = client.messages.create(
-    model="claude-haiku-5-5",
-    max_tokens=1000,
-    tools=[NASTROJ],
-    tool_choice={"type": "tool", "name": "zapis_poptavku"},
-    messages=[{"role": "user", "content":
-        "Vytáhni údaje z této poptávky. Nic si nevymýšlej – co v ní není, "
-        f"dej null a uveď to v chybejici_udaje.\n\n{poptavka}"}],
-)
 
-udaje = odpoved.content[0].input
-print(json.dumps(udaje, ensure_ascii=False, indent=2))
+def vytahni_udaje(text, model="claude-haiku-5-5"):
+    odpoved = client.messages.create(
+        model=model,
+        max_tokens=1000,
+        tools=[NASTROJ],
+        tool_choice={"type": "tool", "name": "zapis_poptavku"},
+        messages=[{"role": "user", "content": PROMPT + text}],
+    )
+    return odpoved.content[0].input, odpoved.usage
 
 
 def patra_bez_vytahu(patro, vytah):
     return patro if patro and vytah is False else 0
 
 
-if udaje["velikost"] is None:
-    print("Chybí velikost bytu – cenu nelze spočítat.")
-else:
-    patra = patra_bez_vytahu(udaje["patro_odkud"], udaje["vytah_odkud"]) \
-          + patra_bez_vytahu(udaje["patro_kam"], udaje["vytah_kam"])
-    km = 12  # zatím natvrdo – vzdálenost dopočítáme přes mapy později
-    polozky, celkem = spocitej_cenu(firma, udaje["velikost"], km=km, patra_bez_vytahu=patra)
-    print("---")
-    for nazev, castka in polozky.items():
-        print(f"{nazev}: {castka} Kč")
-    print(f"CELKEM: {celkem} Kč")
+if __name__ == "__main__":
+    poptavka = """Dobrý den, stěhujeme se 12. 3. z bytu 3+1 ve 3. patře (bez výtahu)
+ve Zlíně do domu v Otrokovicích. Kolik by to stálo? Díky, Jana Nováková"""
+
+    udaje, _ = vytahni_udaje(poptavka)
+    print(json.dumps(udaje, ensure_ascii=False, indent=2))
+
+    if udaje["velikost"] is None:
+        print("Chybí velikost bytu – cenu nelze spočítat.")
+    else:
+        patra = patra_bez_vytahu(udaje["patro_odkud"], udaje["vytah_odkud"]) \
+              + patra_bez_vytahu(udaje["patro_kam"], udaje["vytah_kam"])
+        polozky, celkem = spocitej_cenu(firma, udaje["velikost"], km=12, patra_bez_vytahu=patra)
+        print("---")
+        for nazev, castka in polozky.items():
+            print(f"{nazev}: {castka} Kč")
+        print(f"CELKEM: {celkem} Kč")
