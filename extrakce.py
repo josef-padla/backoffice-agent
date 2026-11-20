@@ -9,12 +9,26 @@ load_dotenv()
 client = anthropic.Anthropic()
 firma = nacti_firmu("bobr")
 
+TYPY_ZAKAZKY = ["cele_stehovani", "cast_vybaveni", "jednotlive_kusy", "kancelar", "neni_poptavka"]
+
 NASTROJ = {
     "name": "zapis_poptavku",
     "description": "Zapíše údaje vytažené z poptávky na stěhování.",
     "input_schema": {
         "type": "object",
         "properties": {
+            "typ_zakazky": {
+                "type": ["string", "null"],
+                "enum": TYPY_ZAKAZKY + [None],
+                "description": (
+                    "cele_stehovani = stěhuje se celá domácnost (byt nebo dům); "
+                    "cast_vybaveni = z domácnosti se stěhuje jen část věcí; "
+                    "jednotlive_kusy = jen pár kusů nábytku, spotřebičů nebo krabic; "
+                    "kancelar = firemní nebo kancelářské prostory; "
+                    "neni_poptavka = zpráva není poptávka stěhování (reklamace, nabídka služeb, dotaz na práci); "
+                    "null = z textu nejde poznat."
+                ),
+            },
             "jmeno": {"type": ["string", "null"]},
             "datum": {"type": ["string", "null"], "description": "Datum stěhování tak, jak ho zákazník napsal"},
             "odkud": {"type": ["string", "null"], "description": "Konkrétní název města, odkud se stěhuje. Pokud není jasné, null."},
@@ -30,7 +44,7 @@ NASTROJ = {
                 "description": "Údaje potřebné pro cenu, které v poptávce chybí",
             },
         },
-        "required": ["jmeno", "datum", "odkud", "kam", "velikost", "patro_odkud",
+        "required": ["typ_zakazky", "jmeno", "datum", "odkud", "kam", "velikost", "patro_odkud",
                      "vytah_odkud", "patro_kam", "vytah_kam", "chybejici_udaje"],
     },
 }
@@ -68,6 +82,11 @@ def vytahni_udaje(text, model="claude-haiku-5-5"):
     )
     udaje = odpoved.content[0].input
 
+    # Kontrola kódem: velikost bytu má smysl jen u stěhování celé domácnosti.
+    # U části věcí, jednotlivých kusů nebo kanceláře by cena podle velikosti byla špatně.
+    if udaje.get("typ_zakazky") not in ("cele_stehovani", None):
+        udaje["velikost"] = None
+
     # Kontrola kódem: města od AI porovnáme se seznamem firmy
     udaje["k_overeni"] = []
     for pole in ("odkud", "kam"):
@@ -95,7 +114,9 @@ ve Zlíně do domu v Otrokovicích. Kolik by to stálo? Díky, Jana Nováková""
     _, km_odkud = over_mesto(udaje["odkud"], firma)
     _, km_kam = over_mesto(udaje["kam"], firma)
 
-    if udaje["velikost"] is None or km_odkud is None or km_kam is None:
+    if udaje["typ_zakazky"] != "cele_stehovani":
+        print(f"Typ zakázky '{udaje['typ_zakazky']}' – cenu nepočítáme automaticky, předat člověku.")
+    elif udaje["velikost"] is None or km_odkud is None or km_kam is None:
         print("Chybí údaje nebo neznámé město – cenu nelze spočítat, je potřeba doptat se.")
     else:
         patra = patra_bez_vytahu(udaje["patro_odkud"], udaje["vytah_odkud"]) \

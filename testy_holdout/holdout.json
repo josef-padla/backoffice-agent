@@ -1,77 +1,192 @@
 [
   {
-    "id": "H01", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H01",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nchtěl bych se informovat na možnost přestěhování bytu 2+1 ve Zlíně, z Jižních Svahů do Malenovic. Ideálně někdy během první poloviny prosince. Máme běžné vybavení domácnosti, pračku, lednici, sedačku a skříně. Obě patra jsou s výtahem.\n\nMůžete mi prosím poslat orientační cenu a informaci, zda máte v tomto termínu volno?\n\nDěkuji a přeji hezký den.\n\nPetr Novotný\nTel.: 777 123 456",
-    "ocekavano": {"velikost": "2+1", "odkud": "Zlín", "kam": "Zlín", "vytah_odkud": true, "vytah_kam": true}
+    "ocekavano": {
+      "velikost": "2+1",
+      "odkud": "Zlín",
+      "kam": "Zlín",
+      "vytah_odkud": true,
+      "vytah_kam": true,
+      "typ_zakazky": "cele_stehovani"
+    }
   },
   {
-    "id": "H02", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H02",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den, potřebovala bych přestěhovat jednu sedačku, postel, komodu a pár krabic z Otrokovic do Napajedel. Kolik by to přibližně stálo a kdy byste měli čas? Děkuji, Jana.",
-    "ocekavano": {"velikost": null, "odkud": "Otrokovice", "kam": "Napajedla"}
+    "ocekavano": {
+      "velikost": null,
+      "odkud": "Otrokovice",
+      "kam": "Napajedla",
+      "typ_zakazky": "jednotlive_kusy"
+    }
   },
   {
-    "id": "H03", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H03",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nchtěla bych se zeptat, jestli děláte i menší stěhování. Jsem studentka a potřebuji se přestěhovat z Olomouce do Zlína. Nemám toho moc, asi 10 krabic, kancelářskou židli, menší stůl, matraci a pár tašek. Auto bohužel nemám a rodiče mi s tím nemohou pomoct.\n\nTermín by mi vyhovoval někdy o víkendu, nejlépe kolem 6. prosince.\n\nPředem děkuji za odpověď a případnou cenovou nabídku.\n\nS pozdravem\nKlára Dvořáková",
-    "ocekavano": {"velikost": null, "odkud": "Olomouc", "kam": "Zlín"}
+    "ocekavano": {
+      "velikost": null,
+      "odkud": "Olomouc",
+      "kam": "Zlín"
+    }
   },
   {
-    "id": "H04", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H04",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nobracím se na Vás s poptávkou stěhovacích služeb. Koncem ledna plánujeme stěhování z rodinného domu v Kroměříži do novostavby v Holešově.\n\nJedná se o kompletní vybavení domu 4+kk. Kromě běžného nábytku máme také dvě manželské postele, tři skříně, sedací soupravu, jídelní stůl, židle, pračku, sušičku, lednici s mrazákem a vybavení garáže. Některý nábytek bude potřeba rozmontovat a následně opět smontovat.\n\nStávající dům má dvě podlaží, nový dům je přízemní. Přístup k oběma nemovitostem je možný přímo z ulice.\n\nRáda bych Vás požádala o informaci, zda nabízíte také balení a ochranu nábytku, případně zda je možné domluvit předběžnou prohlídku pro přesnější kalkulaci.\n\nDěkuji za Váš čas.\n\nS pozdravem\nMartina Veselá\nTelefon: 604 321 987",
-    "ocekavano": {"velikost": "dum", "odkud": "Kroměříž", "kam": "Holešov"}
+    "ocekavano": {
+      "velikost": "dum",
+      "odkud": "Kroměříž",
+      "kam": "Holešov",
+      "typ_zakazky": "cele_stehovani"
+    }
   },
   {
-    "id": "H05", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H05",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nkámoš mi na vás dal kontakt, prý jste mu stěhovali byt a byl spokojenej.\n\nPotřebovali bychom příští měsíc přestěhovat 3+1 v Uherském Hradišti, ideálně do Starého Města. Většinu věcí si zabalíme sami, jde hlavně o nábytek a těžší věci. Jsme v prvním patře bez výtahu.\n\nŠlo by to třeba 13. nebo 14. prosince? A kolik si tak máme připravit peněz?\n\nDíky moc za info!\n\nMichal",
-    "ocekavano": {"velikost": "3+1", "odkud": "Uherské Hradiště", "kam": "Staré Město", "patro_odkud": 1, "vytah_odkud": false}
+    "ocekavano": {
+      "velikost": "3+1",
+      "odkud": "Uherské Hradiště",
+      "kam": "Staré Město",
+      "patro_odkud": 1,
+      "vytah_odkud": false,
+      "typ_zakazky": "cele_stehovani"
+    }
   },
   {
-    "id": "H06", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H06",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Vážení,\n\ns manželkou bychom potřebovali zajistit přestěhování do menšího bytu. Nyní bydlíme ve Vsetíně v bytě 3+1 ve třetím patře a stěhovali bychom se do přízemního bytu v nedaleké obci Jablůnka.\n\nVzhledem k našemu věku už nejsme schopni těžší nábytek přenášet sami. Potřebovali bychom tedy kompletní pomoc včetně snesení nábytku, převozu a vynesení do nového bytu. Většinu drobných věcí si připravíme do krabic předem.\n\nRádi bychom se domluvili na termínu během ledna, přesné datum není rozhodující. Pokud by bylo možné zajistit i demontáž a montáž větší skříně, byli bychom rádi.\n\nProsím o sdělení, jaké informace od nás potřebujete pro vypracování cenové nabídky.\n\nS pozdravem\nJosef a Marie Koneční",
-    "ocekavano": {"velikost": "3+1", "odkud": "Vsetín", "kam": "Jablůnka", "patro_odkud": 3, "vytah_odkud": null, "patro_kam": 0}
+    "ocekavano": {
+      "velikost": "3+1",
+      "odkud": "Vsetín",
+      "kam": "Jablůnka",
+      "patro_odkud": 3,
+      "vytah_odkud": null,
+      "patro_kam": 0,
+      "typ_zakazky": "cele_stehovani"
+    }
   },
   {
-    "id": "H07", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H07",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobry den,\n\nchtel bych se zeptat jestli by bylo mozne prestehovat veci z Prerova do Zlina. Jde o mensi byt 1+kk, par skrini, postel, lednicka, pracka a cca 15 krabic.\n\nTermin jeste presne nevim, asi nekdy po vanocich. Zajimalo by me kolik by to cca stalo.\n\nDiky za odpoved\nRadek",
-    "ocekavano": {"velikost": "1+kk", "odkud": "Přerov", "kam": "Zlín"}
+    "ocekavano": {
+      "velikost": "1+kk",
+      "odkud": "Přerov",
+      "kam": "Zlín",
+      "typ_zakazky": "cele_stehovani"
+    }
   },
   {
-    "id": "H08", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H08",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nza naši společnost bych rád poptal stěhování kanceláře v rámci Zlína. V současnosti sídlíme v centru města a od února budeme přesouvat kanceláře do nových prostor v Prštném.\n\nJedná se přibližně o 12 pracovních míst, tedy kancelářské stoly, židle, kontejnery, počítačové vybavení, tiskárny a několik skříní s dokumentací. Potřebovali bychom stěhování provést ideálně v pátek odpoledne nebo o víkendu, abychom co nejméně omezili běžný provoz.\n\nProsím o informaci, zda máte zkušenosti se stěhováním firemních prostor a jestli nabízíte také demontáž a následnou montáž kancelářského nábytku.\n\nDěkuji za nabídku.\n\nS pozdravem\nTomáš Procházka\nOffice Manager",
-    "ocekavano": {"velikost": null, "odkud": "Zlín", "kam": "Zlín"}
+    "ocekavano": {
+      "velikost": null,
+      "odkud": "Zlín",
+      "kam": "Zlín",
+      "typ_zakazky": "kancelar"
+    }
   },
   {
-    "id": "H09", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H09",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den, potřebovala bych odvézt z Luhačovic do Zlína starší pianino, jednu knihovnu a dvě křesla. Zajímalo by mě, jestli se takovými menšími zakázkami zabýváte a jaká by byla cena. Děkuji, Alena Horáková.",
-    "ocekavano": {"velikost": null, "odkud": "Luhačovice", "kam": "Zlín"}
+    "ocekavano": {
+      "velikost": null,
+      "odkud": "Luhačovice",
+      "kam": "Zlín",
+      "typ_zakazky": "jednotlive_kusy"
+    }
   },
   {
-    "id": "H10", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H10",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobry den,\n\npotrebovala bych se zeptat jestli byste meli nejaky volny termin pristi tyden. Trochu nam to doma nevyslo a musime se vystehovat driv nez jsme cekali :D\n\nJsme ve Zline na Podlesi, byt 2+kk, 4 patro vytah tam je. Stehujeme se do Fryštaku. Veci normalne postel, gauc, skrine, lednice, pracka, nejaky krabice. Skrin je dost velka a nevim jestli pujde rozebrat.\n\nHlavne potrebuju vedet jestli by to slo a kolik by to tak stalo. Muzete mi prosim zavolat?\n\nDekuji\nLenka",
-    "ocekavano": {"velikost": "2+kk", "odkud": "Zlín", "kam": "Fryšták", "patro_odkud": 4, "vytah_odkud": true}
+    "ocekavano": {
+      "velikost": "2+kk",
+      "odkud": "Zlín",
+      "kam": "Fryšták",
+      "patro_odkud": 4,
+      "vytah_odkud": true,
+      "typ_zakazky": "cele_stehovani"
+    }
   },
   {
-    "id": "H11", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H11",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nnašel jsem Vaše stránky při hledání stěhovací firmy ve Zlínském kraji. V současné době bydlím v Brně, ale od ledna se stěhuji za prací do Zlína.\n\nPotřeboval bych přestěhovat vybavení bytu 2+kk. Jedná se o standardní množství nábytku, bez zvlášť těžkých nebo nadrozměrných předmětů. Všechny věci budou připravené a zabalené v krabicích.\n\nChtěl bych se zeptat, zda realizujete také stěhování z Brna do Zlína, případně zda by bylo možné domluvit převoz během jednoho dne. Preferoval bych termín 9.–11. ledna.\n\nBudu rád za orientační kalkulaci.\n\nS pozdravem\nMartin Šimek\nTel.: 608 456 231",
-    "ocekavano": {"velikost": "2+kk", "odkud": "Brno", "kam": "Zlín"}
+    "ocekavano": {
+      "velikost": "2+kk",
+      "odkud": "Brno",
+      "kam": "Zlín",
+      "typ_zakazky": "cele_stehovani"
+    }
   },
   {
-    "id": "H12", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H12",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\npotřebovala bych se přestěhovat z rodinného domu ve Vizovicích do pronajatého bytu ve Zlíně. Po rozvodu si odvážím jen část vybavení, takže se nejedná o kompletní stěhování domu.\n\nKonkrétně potřebuji převézt postel, matraci, dvě komody, menší šatní skříň, televizi, jídelní stůl se čtyřmi židlemi a asi 20 krabic. Některé věci jsou poměrně těžké a sama je nezvládnu přenést.\n\nBylo by možné zajistit i odnos věcí z horního patra domu? V novém bytě je výtah.\n\nZatím počítám s termínem kolem 15. prosince, ale můžeme se případně přizpůsobit.\n\nDěkuji za pochopení a budu se těšit na odpověď.\n\nPetra Malá",
-    "ocekavano": {"velikost": null, "odkud": "Vizovice", "kam": "Zlín", "vytah_kam": true}
+    "ocekavano": {
+      "velikost": null,
+      "odkud": "Vizovice",
+      "kam": "Zlín",
+      "vytah_kam": true,
+      "typ_zakazky": "cast_vybaveni"
+    }
   },
   {
-    "id": "H13", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H13",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nomlouvám se, že píšu takto narychlo, ale potřeboval bych v sobotu přestěhovat pár věcí z Hranic do Zlína. Jedná se o lednici, pračku, postel a několik krabic. Bylo by to vůbec možné?\n\nDěkuji za rychlou odpověď.\n\nOndřej",
-    "ocekavano": {"velikost": null, "kam": "Zlín"}
+    "ocekavano": {
+      "velikost": null,
+      "kam": "Zlín",
+      "typ_zakazky": "jednotlive_kusy"
+    }
   },
   {
-    "id": "H14", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H14",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nrádi bychom si u Vás objednali stěhovací služby v souvislosti s plánovaným prodejem našeho rodinného domu ve Valašském Meziříčí. Nové bydlení máme již zajištěné v Rožnově pod Radhoštěm.\n\nDům má dvě obytná podlaží a sklep. Potřebujeme přestěhovat prakticky celou domácnost včetně vybavení kuchyně, obývacího pokoje, ložnic a dětských pokojů. V garáži máme také pracovní stůl, regály, jízdní kola a zahradní techniku.\n\nČást věcí bychom si zabalili sami, ale uvítali bychom možnost zapůjčení krabic. Dále bychom potřebovali demontovat dvě velké šatní skříně a jednu postel.\n\nStěhování plánujeme na březen příštího roku. Rádi bychom znali přibližnou cenu a případně si domluvili osobní prohlídku nemovitosti.\n\nDěkuji předem za Vaši odpověď.\n\nS pozdravem\nRoman a Ivana Bartošovi\nValašské Meziříčí",
-    "ocekavano": {"velikost": "dum", "odkud": "Valašské Meziříčí", "kam": "Rožnov pod Radhoštěm"}
+    "ocekavano": {
+      "velikost": "dum",
+      "odkud": "Valašské Meziříčí",
+      "kam": "Rožnov pod Radhoštěm",
+      "typ_zakazky": "cele_stehovani"
+    }
   },
   {
-    "id": "H15", "typ": "poptavka", "kategorie": "holdout",
+    "id": "H15",
+    "typ": "poptavka",
+    "kategorie": "holdout",
     "text": "Dobrý den,\n\nchtěla bych Vás poprosit o cenovou nabídku na stěhování z Prostějova do Kroměříže. Jsme mladá rodina s malým dítětem a rádi bychom měli stěhování co nejrychleji vyřešené, protože manžel nastupuje do nové práce.\n\nJedná se o byt 3+1 v panelovém domě, čtvrté patro s výtahem. Stěhujeme se do rodinného domu, kde je příjezd přímo ke vchodu.\n\nVěcí máme poměrně dost: sedačka, obývací stěna, dvě postele, dětská postýlka, skříně, jídelní stůl, židle, pračka, sušička, lednice a přibližně 30–40 krabic. Některé věci ještě třídíme, takže přesný seznam zatím nemám.\n\nTermín bychom potřebovali ideálně někdy mezi 10. a 20. lednem. Zajímalo by mě také, jestli poskytujete službu zabalení křehkých věcí, protože máme hodně nádobí a skleniček.\n\nDěkuji moc za informace a budu ráda za Vaši nabídku.\n\nS pozdravem\nLucie Benešová",
-    "ocekavano": {"velikost": "3+1", "odkud": "Prostějov", "kam": "Kroměříž", "patro_odkud": 4, "vytah_odkud": true}
+    "ocekavano": {
+      "velikost": "3+1",
+      "odkud": "Prostějov",
+      "kam": "Kroměříž",
+      "patro_odkud": 4,
+      "vytah_odkud": true,
+      "typ_zakazky": "cele_stehovani"
+    }
   }
 ]
