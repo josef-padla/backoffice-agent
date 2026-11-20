@@ -245,12 +245,12 @@
     "kategorie": "chaotická",
     "text": "Ahoj, takže situace je taková, že se s přítelem rozcházíme a já se stěhuju zpátky k našim do Kroměříže. Bydlíme ve Zlíně ve 2+kk v pátém patře, výtah naštěstí je. U našich je to rodinný dům. Moc věcí nemám, hlavně postel, skříň a krabice. Šlo by to ještě tenhle měsíc? Klára",
     "ocekavano": {
-      "velikost": "2+kk",
+      "velikost": null,
       "odkud": "Zlín",
       "kam": "Kroměříž",
       "patro_odkud": 5,
       "vytah_odkud": true,
-      "typ_zakazky": "cele_stehovani"
+      "typ_zakazky": "cast_vybaveni"
     }
   },
   {
@@ -290,12 +290,12 @@
     "kategorie": "chaotická",
     "text": "Dobrý den, píšu za babičku. Stěhuje se z bytu 1+1 ve Valašském Meziříčí (2. patro, výtah tam není) do domova seniorů ve Vsetíně. Většinu nábytku tam nechá, ale něco bude potřeba převézt. Děkuji, Jana Kubíková",
     "ocekavano": {
-      "velikost": "1+1",
+      "velikost": null,
       "odkud": "Valašské Meziříčí",
       "kam": "Vsetín",
       "patro_odkud": 2,
       "vytah_odkud": false,
-      "typ_zakazky": "cele_stehovani"
+      "typ_zakazky": "cast_vybaveni"
     }
   },
   {

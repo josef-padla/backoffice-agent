@@ -1,0 +1,41 @@
+{
+  "sada": "testy",
+  "model": "claude-haiku-5-5",
+  "opakovani": 3,
+  "behy": [
+    {
+      "spravna_pole": 291,
+      "celkem_pole": 293,
+      "spravne_poptavky": 49,
+      "celkem_poptavek": 50
+    },
+    {
+      "spravna_pole": 291,
+      "celkem_pole": 293,
+      "spravne_poptavky": 49,
+      "celkem_poptavek": 50
+    },
+    {
+      "spravna_pole": 291,
+      "celkem_pole": 293,
+      "spravne_poptavky": 49,
+      "celkem_poptavek": 50
+    }
+  ],
+  "prumer_poptavek_bez_chyby": 0.98,
+  "nestabilni": [],
+  "vzdy_spatne": [
+    "P18"
+  ],
+  "tokeny_in": 257418,
+  "tokeny_out": 53222,
+  "doba_s": 232.6,
+  "chyby": [
+    "běh 1: P18 (chaotická) velikost: čekal None, dostal '2+kk'",
+    "běh 1: P18 (chaotická) typ_zakazky: čekal 'cast_vybaveni', dostal 'cele_stehovani'",
+    "běh 2: P18 (chaotická) velikost: čekal None, dostal '2+kk'",
+    "běh 2: P18 (chaotická) typ_zakazky: čekal 'cast_vybaveni', dostal 'cele_stehovani'",
+    "běh 3: P18 (chaotická) velikost: čekal None, dostal '2+kk'",
+    "běh 3: P18 (chaotická) typ_zakazky: čekal 'cast_vybaveni', dostal 'cele_stehovani'"
+  ]
+}
