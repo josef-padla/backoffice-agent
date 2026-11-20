@@ -24,3 +24,20 @@ vikendovy_priplatek = 0.20
 "4+kk" = 8
 "4+1" = 8
 "dum" = 10
+
+# Města, kam firma jezdí, a přibližná vzdálenost ze Zlína v km
+[mesta]
+"Zlín" = 0
+"Fryšták" = 9
+"Otrokovice" = 12
+"Napajedla" = 17
+"Vizovice" = 17
+"Holešov" = 22
+"Luhačovice" = 26
+"Uherské Hradiště" = 30
+"Vsetín" = 33
+"Kroměříž" = 35
+"Valašské Meziříčí" = 45
+"Přerov" = 50
+"Olomouc" = 75
+"Brno" = 100

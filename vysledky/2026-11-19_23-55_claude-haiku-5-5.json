@@ -1,0 +1,11 @@
+{
+  "model": "claude-haiku-5-5",
+  "spravna_pole": 148,
+  "celkem_pole": 148,
+  "spravne_poptavky": 30,
+  "celkem_poptavek": 30,
+  "tokeny_in": 32478,
+  "tokeny_out": 9720,
+  "doba_s": 46.1,
+  "chyby": []
+}
