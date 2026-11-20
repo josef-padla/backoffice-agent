@@ -1,0 +1,124 @@
+{
+  "model": "claude-haiku-5-5",
+  "spravna_pole": 224,
+  "celkem_pole": 246,
+  "spravne_poptavky": 31,
+  "celkem_poptavek": 50,
+  "tokeny_in": 71857,
+  "tokeny_out": 16441,
+  "doba_s": 73.8,
+  "podle_kategorie": {
+    "úplná": [
+      6,
+      10
+    ],
+    "chybějící údaje": [
+      6,
+      7
+    ],
+    "chaotická": [
+      1,
+      5
+    ],
+    "extra služby": [
+      3,
+      4
+    ],
+    "pokus o manipulaci": [
+      4,
+      4
+    ],
+    "není poptávka": [
+      3,
+      3
+    ],
+    "těžká: NP": [
+      1,
+      1
+    ],
+    "těžká: oprava v textu": [
+      1,
+      1
+    ],
+    "těžká: cizí jazyk": [
+      0,
+      2
+    ],
+    "těžká: čísla slovy": [
+      0,
+      1
+    ],
+    "těžká: neznámé město": [
+      1,
+      1
+    ],
+    "těžká: velikost mimo ceník": [
+      1,
+      1
+    ],
+    "těžká: velikost opisem": [
+      1,
+      1
+    ],
+    "těžká: v rámci domu": [
+      1,
+      1
+    ],
+    "těžká: rušivé město": [
+      0,
+      1
+    ],
+    "těžká: výtah mimo provoz": [
+      0,
+      1
+    ],
+    "těžká: velikost cíle vs. odkud": [
+      0,
+      1
+    ],
+    "těžká: region místo města": [
+      1,
+      1
+    ],
+    "těžká: zkratky": [
+      1,
+      1
+    ],
+    "těžká: jen jeden předmět": [
+      0,
+      1
+    ],
+    "těžká: zápor": [
+      0,
+      1
+    ],
+    "těžká: rušivá čísla": [
+      0,
+      1
+    ]
+  },
+  "chyby": [
+    "P02 (úplná) patro_kam: čekal 1, dostal 0",
+    "P07 (úplná) patro_odkud: čekal 4, dostal 3",
+    "P07 (úplná) patro_kam: čekal 3, dostal 2",
+    "P09 (úplná) patro_odkud: čekal 3, dostal 2",
+    "P10 (úplná) patro_odkud: čekal 2, dostal 1",
+    "P10 (úplná) patro_kam: čekal 2, dostal 1",
+    "P14 (chybějící údaje) patro_odkud: čekal 2, dostal 1",
+    "P17 (chaotická) patro_odkud: čekal 3, dostal 2",
+    "P18 (chaotická) patro_odkud: čekal 5, dostal 4",
+    "P20 (chaotická) patro_kam: čekal 3, dostal 2",
+    "P21 (chaotická) patro_odkud: čekal 2, dostal 1",
+    "P22 (extra služby) patro_odkud: čekal 2, dostal 1",
+    "P33 (těžká: cizí jazyk) patro_odkud: čekal 3, dostal 2",
+    "P34 (těžká: cizí jazyk) patro_odkud: čekal 4, dostal 3",
+    "P35 (těžká: čísla slovy) patro_odkud: čekal 2, dostal 1",
+    "P40 (těžká: rušivé město) patro_kam: čekal 2, dostal 1",
+    "P41 (těžká: výtah mimo provoz) patro_odkud: čekal 6, dostal 5",
+    "P44 (těžká: velikost cíle vs. odkud) patro_kam: čekal 4, dostal 3",
+    "P47 (těžká: jen jeden předmět) patro_kam: čekal 3, dostal 2",
+    "P48 (těžká: zápor) patro_odkud: čekal 3, dostal 2",
+    "P48 (těžká: zápor) patro_kam: čekal 1, dostal 0",
+    "P49 (těžká: rušivá čísla) patro_odkud: čekal 4, dostal 3"
+  ]
+}

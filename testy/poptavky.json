@@ -98,7 +98,7 @@
   {
     "id": "P20", "typ": "poptavka", "kategorie": "chaotická",
     "text": "Dobry den, mame 4+kk v Uh. Hradisti (prizemi) a stehujem do Zlina, 3. NP, vytah je. Termin cca polovina cervna. Diky Novak",
-    "ocekavano": {"velikost": "4+kk", "odkud": "Uherské Hradiště", "kam": "Zlín", "patro_odkud": 0, "patro_kam": 3, "vytah_kam": true}
+    "ocekavano": {"velikost": "4+kk", "odkud": "Uherské Hradiště", "kam": "Zlín", "patro_odkud": 0, "patro_kam": 2, "vytah_kam": true}
   },
   {
     "id": "P21", "typ": "poptavka", "kategorie": "chaotická",

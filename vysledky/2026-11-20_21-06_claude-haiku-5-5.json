@@ -1,0 +1,101 @@
+{
+  "model": "claude-haiku-5-5",
+  "spravna_pole": 246,
+  "celkem_pole": 246,
+  "spravne_poptavky": 50,
+  "celkem_poptavek": 50,
+  "tokeny_in": 70156,
+  "tokeny_out": 16126,
+  "doba_s": 74.2,
+  "podle_kategorie": {
+    "úplná": [
+      10,
+      10
+    ],
+    "chybějící údaje": [
+      7,
+      7
+    ],
+    "chaotická": [
+      5,
+      5
+    ],
+    "extra služby": [
+      4,
+      4
+    ],
+    "pokus o manipulaci": [
+      4,
+      4
+    ],
+    "není poptávka": [
+      3,
+      3
+    ],
+    "těžká: NP": [
+      1,
+      1
+    ],
+    "těžká: oprava v textu": [
+      1,
+      1
+    ],
+    "těžká: cizí jazyk": [
+      2,
+      2
+    ],
+    "těžká: čísla slovy": [
+      1,
+      1
+    ],
+    "těžká: neznámé město": [
+      1,
+      1
+    ],
+    "těžká: velikost mimo ceník": [
+      1,
+      1
+    ],
+    "těžká: velikost opisem": [
+      1,
+      1
+    ],
+    "těžká: v rámci domu": [
+      1,
+      1
+    ],
+    "těžká: rušivé město": [
+      1,
+      1
+    ],
+    "těžká: výtah mimo provoz": [
+      1,
+      1
+    ],
+    "těžká: velikost cíle vs. odkud": [
+      1,
+      1
+    ],
+    "těžká: region místo města": [
+      1,
+      1
+    ],
+    "těžká: zkratky": [
+      1,
+      1
+    ],
+    "těžká: jen jeden předmět": [
+      1,
+      1
+    ],
+    "těžká: zápor": [
+      1,
+      1
+    ],
+    "těžká: rušivá čísla": [
+      1,
+      1
+    ]
+  },
+  "chyby": []
+}
