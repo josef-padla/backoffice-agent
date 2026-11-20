@@ -1,0 +1,50 @@
+{
+  "sada": "testy_holdout",
+  "model": "claude-haiku-5-5",
+  "opakovani": 3,
+  "behy": [
+    {
+      "spravna_pole": 52,
+      "celkem_pole": 56,
+      "spravne_poptavky": 11,
+      "celkem_poptavek": 15
+    },
+    {
+      "spravna_pole": 52,
+      "celkem_pole": 56,
+      "spravne_poptavky": 11,
+      "celkem_poptavek": 15
+    },
+    {
+      "spravna_pole": 52,
+      "celkem_pole": 56,
+      "spravne_poptavky": 11,
+      "celkem_poptavek": 15
+    }
+  ],
+  "prumer_poptavek_bez_chyby": 0.733,
+  "nestabilni": [],
+  "vzdy_spatne": [
+    "H01",
+    "H05",
+    "H08",
+    "H12"
+  ],
+  "tokeny_in": 71331,
+  "tokeny_out": 18777,
+  "doba_s": 87.6,
+  "chyby": [
+    "běh 1: H01 (holdout) kam: čekal 'Zlín', dostal 'Malenovice'",
+    "běh 1: H05 (holdout) kam: čekal 'Staré Město', dostal 'Starého Města'",
+    "běh 1: H08 (holdout) kam: čekal 'Zlín', dostal 'Zlín (Prštné)'",
+    "běh 1: H12 (holdout) velikost: čekal None, dostal 'dum'",
+    "běh 2: H01 (holdout) kam: čekal 'Zlín', dostal 'Malenovice'",
+    "běh 2: H05 (holdout) kam: čekal 'Staré Město', dostal 'Starého Města'",
+    "běh 2: H08 (holdout) kam: čekal 'Zlín', dostal 'Zlín (Prštné)'",
+    "běh 2: H12 (holdout) velikost: čekal None, dostal 'dum'",
+    "běh 3: H01 (holdout) kam: čekal 'Zlín', dostal 'Malenovice'",
+    "běh 3: H05 (holdout) kam: čekal 'Staré Město', dostal 'Starého Města'",
+    "běh 3: H08 (holdout) kam: čekal 'Zlín', dostal 'Zlín (Prštné)'",
+    "běh 3: H12 (holdout) velikost: čekal None, dostal 'dum'"
+  ]
+}

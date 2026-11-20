@@ -1,4 +1,5 @@
 import json
+import sys
 import time
 from collections import defaultdict
 from datetime import datetime
@@ -7,10 +8,11 @@ from extrakce import vytahni_udaje
 
 MODEL = "claude-haiku-5-5"
 OPAKOVANI = 3  # kolikrát projedeme celou sadu – AI neodpovídá pokaždé stejně
+SLOZKA = sys.argv[1] if len(sys.argv) > 1 else "testy"  # uv run eval.py testy_holdout
 
-# Načte všechny sady ze složky testy/
+# Načte všechny sady ze zvolené složky
 sada = []
-for soubor in sorted(Path("testy").glob("*.json")):
+for soubor in sorted(Path(SLOZKA).glob("*.json")):
     sada += json.loads(soubor.read_text(encoding="utf-8"))
 
 
@@ -58,7 +60,7 @@ nestabilni = [pid for pid, v in vysledky_poptavek.items() if any(v) and not all(
 vzdy_spatne = [pid for pid, v in vysledky_poptavek.items() if not any(v)]
 
 print("\n===== VÝSLEDEK =====")
-print(f"Model: {MODEL}, běhů: {OPAKOVANI}, poptávek: {len(sada)}")
+print(f"Sada: {SLOZKA}, model: {MODEL}, běhů: {OPAKOVANI}, poptávek: {len(sada)}")
 for i, b in enumerate(behy, 1):
     print(f"  Běh {i}: poptávky bez chyby {b['spravne_poptavky']}/{b['celkem_poptavek']}, "
           f"pole {b['spravna_pole']}/{b['celkem_pole']}")
@@ -74,9 +76,9 @@ for ch in chyby:
     print(" -", ch)
 
 Path("vysledky").mkdir(exist_ok=True)
-soubor = Path("vysledky") / f"{datetime.now():%Y-%m-%d_%H-%M}_{MODEL}_x{OPAKOVANI}.json"
+soubor = Path("vysledky") / f"{datetime.now():%Y-%m-%d_%H-%M}_{SLOZKA}_{MODEL}_x{OPAKOVANI}.json"
 soubor.write_text(json.dumps({
-    "model": MODEL, "opakovani": OPAKOVANI, "behy": behy,
+    "sada": SLOZKA, "model": MODEL, "opakovani": OPAKOVANI, "behy": behy,
     "prumer_poptavek_bez_chyby": round(sum(procenta) / len(procenta), 3),
     "nestabilni": nestabilni, "vzdy_spatne": vzdy_spatne,
     "tokeny_in": tokeny_in, "tokeny_out": tokeny_out,
