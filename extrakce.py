@@ -31,8 +31,12 @@ NASTROJ = {
             },
             "jmeno": {"type": ["string", "null"]},
             "datum": {"type": ["string", "null"], "description": "Datum stěhování tak, jak ho zákazník napsal"},
-            "odkud": {"type": ["string", "null"], "description": "Konkrétní název města, odkud se stěhuje. Pokud není jasné, null."},
-            "kam": {"type": ["string", "null"], "description": "Konkrétní název města, kam se stěhuje. Pokud není jasné, null."},
+            "odkud": {"type": ["string", "null"], "description": (
+                "Název obce, odkud se stěhuje, v 1. pádě a bez závorek "
+                "(např. 'Staré Město', ne 'Starého Města'). Pokud není jasné, null.")},
+            "kam": {"type": ["string", "null"], "description": (
+                "Název obce, kam se stěhuje, v 1. pádě a bez závorek "
+                "(např. 'Staré Město', ne 'Starého Města'). Pokud není jasné, null.")},
             "velikost": {"type": ["string", "null"], "enum": list(firma["odhad_hodin"].keys()) + [None]},
             "patro_odkud": {"type": ["integer", "null"]},
             "vytah_odkud": {"type": ["boolean", "null"]},
