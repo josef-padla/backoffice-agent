@@ -41,3 +41,22 @@ vikendovy_priplatek = 0.20
 "Přerov" = 50
 "Olomouc" = 75
 "Brno" = 100
+
+# Části měst a čtvrti -> město, ke kterému patří
+[casti_mest]
+"Jižní Svahy" = "Zlín"
+"Malenovice" = "Zlín"
+"Prštné" = "Zlín"
+"Podlesí" = "Zlín"
+"Zálešná" = "Zlín"
+"Louky" = "Zlín"
+"Příluky" = "Zlín"
+"Kudlov" = "Zlín"
+"Štípa" = "Zlín"
+"Mladcová" = "Zlín"
+"Kostelec" = "Zlín"
+"Jaroslavice" = "Zlín"
+"Lužkovice" = "Zlín"
+"Klečůvka" = "Zlín"
+"Salaš" = "Zlín"
+"Velíková" = "Zlín"
