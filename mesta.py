@@ -1,4 +1,3 @@
-import difflib
 import re
 import unicodedata
 
@@ -11,7 +10,11 @@ def _bez_diakritiky(text):
 def over_mesto(nazev, firma):
     """Najde město v seznamu firmy. Vrátí (správný název, km ze Zlína),
     nebo (None, None), když město firma nezná.
-    Zná i části měst (např. Malenovice -> Zlín)."""
+    Zná i části měst (např. Malenovice -> Zlín).
+
+    Porovnáváme PŘESNĚ (jen bez diakritiky a velikosti písmen), ne podobnostně.
+    Podobnostní porovnání zaměnilo Halenkovice za Malenovice -> Zlín (špatná cena).
+    Když si nejsme jistí, je bezpečnější město nenajít a předat poptávku člověku."""
     if nazev is None:
         return None, None
 
@@ -23,8 +26,7 @@ def over_mesto(nazev, firma):
     kandidati = {_bez_diakritiky(m): m for m in mesta}
     kandidati.update({_bez_diakritiky(c): mesto for c, mesto in casti.items()})
 
-    shoda = difflib.get_close_matches(_bez_diakritiky(nazev), kandidati.keys(), n=1, cutoff=0.85)
-    if not shoda:
+    spravne = kandidati.get(_bez_diakritiky(nazev))
+    if spravne is None:
         return None, None
-    spravne = kandidati[shoda[0]]
     return spravne, mesta[spravne]
