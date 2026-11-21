@@ -1,0 +1,68 @@
+{
+  "sada": "testy_holdout_v2",
+  "model": "claude-haiku-5-5",
+  "opakovani": 3,
+  "behy": [
+    {
+      "spravna_pole": 97,
+      "celkem_pole": 106,
+      "spravne_poptavky": 16,
+      "celkem_poptavek": 22
+    },
+    {
+      "spravna_pole": 97,
+      "celkem_pole": 106,
+      "spravne_poptavky": 16,
+      "celkem_poptavek": 22
+    },
+    {
+      "spravna_pole": 98,
+      "celkem_pole": 106,
+      "spravne_poptavky": 16,
+      "celkem_poptavek": 22
+    }
+  ],
+  "prumer_poptavek_bez_chyby": 0.727,
+  "nestabilni": [
+    "V01",
+    "V02"
+  ],
+  "vzdy_spatne": [
+    "V05",
+    "V13",
+    "V14",
+    "V15",
+    "V16"
+  ],
+  "tokeny_in": 127620,
+  "tokeny_out": 26917,
+  "doba_s": 120.4,
+  "chyby": [
+    "běh 1: V02 (holdout v2) typ_zakazky: čekal 'cele_stehovani', dostal 'jednotlive_kusy'",
+    "běh 1: V02 (holdout v2) velikost: čekal '1+kk', dostal None",
+    "běh 1: V05 (holdout v2) odkud: čekal 'Halenkovice', dostal 'Zlín'",
+    "běh 1: V13 (holdout v2) kam: čekal 'Halenkovice', dostal 'Zlín'",
+    "běh 1: V14 (holdout v2) typ_zakazky: čekal 'cele_stehovani', dostal 'cast_vybaveni'",
+    "běh 1: V14 (holdout v2) velikost: čekal '1+kk', dostal None",
+    "běh 1: V15 (holdout v2) typ_zakazky: čekal 'cele_stehovani', dostal 'cast_vybaveni'",
+    "běh 1: V15 (holdout v2) velikost: čekal '2+1', dostal None",
+    "běh 1: V16 (holdout v2) odkud: čekal 'Ostrava', dostal 'Ostrava-Poruba'",
+    "běh 2: V02 (holdout v2) typ_zakazky: čekal 'cele_stehovani', dostal 'cast_vybaveni'",
+    "běh 2: V02 (holdout v2) velikost: čekal '1+kk', dostal None",
+    "běh 2: V05 (holdout v2) odkud: čekal 'Halenkovice', dostal 'Zlín'",
+    "běh 2: V13 (holdout v2) kam: čekal 'Halenkovice', dostal 'Zlín'",
+    "běh 2: V14 (holdout v2) typ_zakazky: čekal 'cele_stehovani', dostal 'cast_vybaveni'",
+    "běh 2: V14 (holdout v2) velikost: čekal '1+kk', dostal None",
+    "běh 2: V15 (holdout v2) typ_zakazky: čekal 'cele_stehovani', dostal 'cast_vybaveni'",
+    "běh 2: V15 (holdout v2) velikost: čekal '2+1', dostal None",
+    "běh 2: V16 (holdout v2) odkud: čekal 'Ostrava', dostal 'Ostrava-Poruba'",
+    "běh 3: V01 (holdout v2) odkud: čekal 'Zlín', dostal 'Přštěnice'",
+    "běh 3: V05 (holdout v2) odkud: čekal 'Halenkovice', dostal 'Zlín'",
+    "běh 3: V13 (holdout v2) kam: čekal 'Halenkovice', dostal 'Zlín'",
+    "běh 3: V14 (holdout v2) typ_zakazky: čekal 'cele_stehovani', dostal 'cast_vybaveni'",
+    "běh 3: V14 (holdout v2) velikost: čekal '1+kk', dostal None",
+    "běh 3: V15 (holdout v2) typ_zakazky: čekal 'cele_stehovani', dostal 'cast_vybaveni'",
+    "běh 3: V15 (holdout v2) velikost: čekal '2+1', dostal None",
+    "běh 3: V16 (holdout v2) odkud: čekal 'Ostrava', dostal 'Ostrava-Poruba'"
+  ]
+}
