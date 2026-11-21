@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from backoffice-agent!")
+"""AI back-office agent pro poptávky stěhovací firmy (Stěhování Bobr)."""

@@ -1,3 +1,4 @@
+# ARCHIV: úplně první volání Claude API v projektu.
 from dotenv import load_dotenv
 import anthropic
 

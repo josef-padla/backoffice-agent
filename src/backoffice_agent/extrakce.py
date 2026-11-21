@@ -2,8 +2,8 @@ import json
 import re
 from dotenv import load_dotenv
 import anthropic
-from cena import nacti_firmu, spocitej_cenu
-from mesta import over_mesto
+from backoffice_agent.cena import nacti_firmu, spocitej_cenu
+from backoffice_agent.mesta import over_mesto
 
 load_dotenv()
 client = anthropic.Anthropic()

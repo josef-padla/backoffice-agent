@@ -1,5 +1,5 @@
-from cena import nacti_firmu
-from mesta import over_mesto
+from backoffice_agent.cena import nacti_firmu
+from backoffice_agent.mesta import over_mesto
 
 firma = nacti_firmu("bobr")
 

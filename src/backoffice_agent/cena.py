@@ -1,9 +1,12 @@
 import tomllib
 from pathlib import Path
 
+# Kořen projektu: src/backoffice_agent/cena.py -> o dvě složky výš
+KOREN = Path(__file__).resolve().parents[2]
+
 
 def nacti_firmu(nazev):
-    with open(Path("firmy") / f"{nazev}.toml", "rb") as f:
+    with open(KOREN / "firmy" / f"{nazev}.toml", "rb") as f:
         return tomllib.load(f)
 
 

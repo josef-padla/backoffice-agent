@@ -4,15 +4,17 @@ import time
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
-from extrakce import vytahni_udaje
+from backoffice_agent.extrakce import vytahni_udaje
+
+EVALY = Path(__file__).resolve().parent  # složka evaly/
 
 MODEL = "claude-haiku-5-5"
 OPAKOVANI = 3  # kolikrát projedeme celou sadu – AI neodpovídá pokaždé stejně
-SLOZKA = sys.argv[1] if len(sys.argv) > 1 else "testy"  # uv run eval.py testy_holdout
+SADA = sys.argv[1] if len(sys.argv) > 1 else "hlavni"  # uv run evaly/eval.py holdout_v2
 
-# Načte všechny sady ze zvolené složky
+# Načte všechny soubory zvolené sady ze složky evaly/sady/<SADA>/
 sada = []
-for soubor in sorted(Path(SLOZKA).glob("*.json")):
+for soubor in sorted((EVALY / "sady" / SADA).glob("*.json")):
     sada += json.loads(soubor.read_text(encoding="utf-8"))
 
 
@@ -60,7 +62,7 @@ nestabilni = [pid for pid, v in vysledky_poptavek.items() if any(v) and not all(
 vzdy_spatne = [pid for pid, v in vysledky_poptavek.items() if not any(v)]
 
 print("\n===== VÝSLEDEK =====")
-print(f"Sada: {SLOZKA}, model: {MODEL}, běhů: {OPAKOVANI}, poptávek: {len(sada)}")
+print(f"Sada: {SADA}, model: {MODEL}, běhů: {OPAKOVANI}, poptávek: {len(sada)}")
 for i, b in enumerate(behy, 1):
     print(f"  Běh {i}: poptávky bez chyby {b['spravne_poptavky']}/{b['celkem_poptavek']}, "
           f"pole {b['spravna_pole']}/{b['celkem_pole']}")
@@ -75,10 +77,10 @@ print("\nChyby:")
 for ch in chyby:
     print(" -", ch)
 
-Path("vysledky").mkdir(exist_ok=True)
-soubor = Path("vysledky") / f"{datetime.now():%Y-%m-%d_%H-%M}_{SLOZKA}_{MODEL}_x{OPAKOVANI}.json"
+(EVALY / "vysledky").mkdir(exist_ok=True)
+soubor = (EVALY / "vysledky") / f"{datetime.now():%Y-%m-%d_%H-%M}_{SADA}_{MODEL}_x{OPAKOVANI}.json"
 soubor.write_text(json.dumps({
-    "sada": SLOZKA, "model": MODEL, "opakovani": OPAKOVANI, "behy": behy,
+    "sada": SADA, "model": MODEL, "opakovani": OPAKOVANI, "behy": behy,
     "prumer_poptavek_bez_chyby": round(sum(procenta) / len(procenta), 3),
     "nestabilni": nestabilni, "vzdy_spatne": vzdy_spatne,
     "tokeny_in": tokeny_in, "tokeny_out": tokeny_out,

@@ -1,6 +1,6 @@
 import json
-from extrakce import client, SYSTEM, NASTROJ, predzpracuj, firma
-from mesta import over_mesto
+from backoffice_agent.extrakce import client, SYSTEM, NASTROJ, predzpracuj, firma
+from backoffice_agent.mesta import over_mesto
 
 text = """Dobrý den, chtěla bych se zeptat jestli stěhujete i z menších obcí. Potřebujeme přestěhovat domek z Halenkovic do Otrokovic. Nejde o úplně všechno, část věcí si odvezeme sami."""
 

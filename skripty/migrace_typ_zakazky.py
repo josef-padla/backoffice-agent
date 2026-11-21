@@ -1,3 +1,4 @@
+# ARCHIV: jednorázový skript, už použitý. Cesty odpovídají staré struktuře projektu (před úklidem).
 import json
 from pathlib import Path
 
