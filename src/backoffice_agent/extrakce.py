@@ -86,7 +86,9 @@ def zavolej_ai(text, model="claude-haiku-5-5"):
         tool_choice={"type": "tool", "name": "zapis_poptavku"},
         messages=[{"role": "user", "content": f"<poptavka>\n{predzpracuj(text)}\n</poptavka>"}],
     )
-    return odpoved.content[0].input, odpoved.usage
+      # Bereme blok s voláním nástroje, ne slepě první blok
+    nastroj = next(blok for blok in odpoved.content if blok.type == "tool_use")
+    return nastroj.input, odpoved.usage
 
 
 def zkontroluj(surove):

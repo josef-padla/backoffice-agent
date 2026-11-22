@@ -49,7 +49,9 @@ def napis_odpoved(poptavka, akce, podklady, model="claude-haiku-5-5"):
             f"{ZADANI[akce]}"
         )}],
     )
-    return odpoved.content[0].text.strip(), odpoved.usage
+    # Odpověď může obsahovat i jiné bloky (např. thinking) – bereme první TEXTOVÝ blok
+    text = next(blok.text for blok in odpoved.content if blok.type == "text")
+    return text.strip(), odpoved.usage
 
 
 def rozpis_ceny(polozky, celkem):
