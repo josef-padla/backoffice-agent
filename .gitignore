@@ -12,3 +12,6 @@ wheels/
 
 # Testy
 .pytest_cache/
+
+# Záznamy běhů agenta (trace)
+logy/

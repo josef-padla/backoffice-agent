@@ -1,8 +1,8 @@
-import json
+import copy
 import re
 from dotenv import load_dotenv
 import anthropic
-from backoffice_agent.cena import nacti_firmu, spocitej_cenu
+from backoffice_agent.cena import nacti_firmu
 from backoffice_agent.mesta import over_mesto
 
 load_dotenv()
@@ -76,7 +76,8 @@ def predzpracuj(text):
     return re.sub(r"(\d+)\.\s*NP\b", nahrad, text)
 
 
-def vytahni_udaje(text, model="claude-haiku-5-5"):
+def zavolej_ai(text, model="claude-haiku-5-5"):
+    """Fialový krok: AI přečte poptávku a vrátí údaje. Vrací SUROVÝ výstup AI (nic neopravuje)."""
     odpoved = client.messages.create(
         model=model,
         max_tokens=1000,
@@ -85,50 +86,45 @@ def vytahni_udaje(text, model="claude-haiku-5-5"):
         tool_choice={"type": "tool", "name": "zapis_poptavku"},
         messages=[{"role": "user", "content": f"<poptavka>\n{predzpracuj(text)}\n</poptavka>"}],
     )
-    udaje = odpoved.content[0].input
+    return odpoved.content[0].input, odpoved.usage
 
-    # Kontrola kódem: velikost bytu má smysl jen u stěhování celé domácnosti.
+
+def zkontroluj(surove):
+    """Zelený krok: kontroly kódem. Surový výstup AI nemění – vrací opravenou KOPII
+    a seznam zásahů, aby bylo vidět, co AI řekla a co kód změnil."""
+    udaje = copy.deepcopy(surove)
+    zasahy = []
+
+    # Velikost bytu má smysl jen u stěhování celé domácnosti.
     # U části věcí, jednotlivých kusů nebo kanceláře by cena podle velikosti byla špatně.
-    if udaje.get("typ_zakazky") not in ("cele_stehovani", None):
+    typ = udaje.get("typ_zakazky")
+    if typ not in ("cele_stehovani", None) and udaje.get("velikost") is not None:
+        zasahy.append(f"velikost '{udaje['velikost']}' zrušena – u typu '{typ}' se cena podle velikosti nepočítá")
         udaje["velikost"] = None
 
-    # Kontrola kódem: města od AI porovnáme se seznamem firmy
+    # Města od AI porovnáme se seznamem firmy
     udaje["k_overeni"] = []
     for pole in ("odkud", "kam"):
-        if udaje[pole] is not None:
-            spravne, _ = over_mesto(udaje[pole], firma)
-            if spravne:
-                udaje[pole] = spravne
-            else:
-                udaje["k_overeni"].append(f"{pole}: neznámé město '{udaje[pole]}'")
+        puvodni = udaje.get(pole)
+        if puvodni is None:
+            continue
+        spravne, _ = over_mesto(puvodni, firma)
+        if spravne is None:
+            udaje["k_overeni"].append(f"{pole}: neznámé město '{puvodni}'")
+        elif spravne != puvodni:
+            zasahy.append(f"{pole}: '{puvodni}' → '{spravne}'")
+            udaje[pole] = spravne
 
-    return udaje, odpoved.usage
+    return udaje, zasahy
+
+
+def vytahni_udaje(text, model="claude-haiku-5-5"):
+    """AI + kontroly dohromady (používá eval)."""
+    surove, usage = zavolej_ai(text, model)
+    udaje, _ = zkontroluj(surove)
+    return udaje, usage
 
 
 def patra_bez_vytahu(patro, vytah):
     return patro if patro and vytah is False else 0
 
-
-if __name__ == "__main__":
-    poptavka = """Dobrý den, stěhujeme se 12. 3. z bytu 3+1 ve 3. patře (bez výtahu)
-ve Zlíně do domu v Otrokovicích. Kolik by to stálo? Díky, Jana Nováková"""
-
-    udaje, _ = vytahni_udaje(poptavka)
-    print(json.dumps(udaje, ensure_ascii=False, indent=2))
-
-    _, km_odkud = over_mesto(udaje["odkud"], firma)
-    _, km_kam = over_mesto(udaje["kam"], firma)
-
-    if udaje["typ_zakazky"] != "cele_stehovani":
-        print(f"Typ zakázky '{udaje['typ_zakazky']}' – cenu nepočítáme automaticky, předat člověku.")
-    elif udaje["velikost"] is None or km_odkud is None or km_kam is None:
-        print("Chybí údaje nebo neznámé město – cenu nelze spočítat, je potřeba doptat se.")
-    else:
-        patra = patra_bez_vytahu(udaje["patro_odkud"], udaje["vytah_odkud"]) \
-              + patra_bez_vytahu(udaje["patro_kam"], udaje["vytah_kam"])
-        km = max(km_odkud, km_kam)  # zjednodušení: vzdálenost ze Zlína k vzdálenějšímu místu
-        polozky, celkem = spocitej_cenu(firma, udaje["velikost"], km=km, patra_bez_vytahu=patra)
-        print("---")
-        for nazev, castka in polozky.items():
-            print(f"{nazev}: {castka} Kč")
-        print(f"CELKEM: {celkem} Kč")

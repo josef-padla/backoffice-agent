@@ -8,6 +8,7 @@ Portfoliový projekt: AI agent, který zpracovává poptávky fiktivní stěhova
 ```
 src/backoffice_agent/   kód agenta
   extrakce.py           AI čte poptávku + kontroly kódem
+  pipeline.py           celá cesta poptávky + trace (záznam kroků do logy/)
   mesta.py              ověření měst podle seznamu firmy
   cena.py               načtení firmy a výpočet ceny
 firmy/bobr.toml         „firma": ceník, odhad hodin, města, části měst
@@ -25,7 +26,8 @@ DENIK.md                vývojový deník
 ## Spuštění
 
 ```
-uv run python -m backoffice_agent.extrakce   # ukázka na jedné poptávce
+uv run python -m backoffice_agent.pipeline   # ukázka s trace
+uv run python -m backoffice_agent.pipeline "text poptávky"
 uv run pytest                                # unit testy kódu
 uv run evaly/eval.py                         # eval na hlavní sadě
 uv run evaly/eval.py holdout_v2              # eval na jiné sadě
