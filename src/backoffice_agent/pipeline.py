@@ -15,6 +15,9 @@ from backoffice_agent.odpoved import napis_odpoved, rozpis_ceny, zkontroluj_odpo
 
 LOGY = KOREN / "logy"
 
+# Čtení poptávky zvládne levný Haiku, psaní e-mailů líp Sonnet (změřeno: bez chyby 7/11 vs 5/11)
+PISATEL_VYCHOZI = "claude-sonnet-5-5"
+
 
 def rozhodni(udaje):
     """Kód rozhodne, co se zprávou: 'nabidka', 'doptat', 'predat_cloveku', nebo 'bez_odpovedi'."""
@@ -93,8 +96,8 @@ def sestav_podklady(udaje, akce, duvody, rozhodnuti):
 
 
 def zpracuj_poptavku(text, model="claude-haiku-5-5", model_pisatel=None):
-    """model = čte poptávku (extrakce), model_pisatel = píše odpověď (když není zadán, stejný jako model)."""
-    pisatel = model_pisatel or model
+    """model = čte poptávku (extrakce), model_pisatel = píše odpověď (výchozí PISATEL_VYCHOZI)."""
+    pisatel = model_pisatel or PISATEL_VYCHOZI
     start = time.time()
     kroky = []
 

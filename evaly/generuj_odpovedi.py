@@ -12,7 +12,7 @@ from kriteria import KRITERIA
 
 EVALY = Path(__file__).resolve().parent
 CIL = EVALY / "hodnoceni" / (sys.argv[1] if len(sys.argv) > 1 else "odpovedi.json")
-PISATEL = sys.argv[2] if len(sys.argv) > 2 else None  # None = stejný model jako extrakce (Haiku)
+PISATEL = sys.argv[2] if len(sys.argv) > 2 else None  # None = výchozí pisatel agenta (Sonnet)
 
 # Mix situací: nabídka, doptání, předání, cizí jazyk
 VYBER = ["P01", "P05", "P11", "P12", "P14", "P16", "P22", "P28", "P29", "P33", "P34", "P47"]
@@ -35,7 +35,7 @@ for pid in VYBER:
         "poptavka": sada[pid]["text"],
         "akce": zaznam["akce"],
         "odpoved": zaznam["odpoved"],
-        "pisatel": PISATEL or "claude-haiku-5-5",
+        "pisatel": PISATEL or "výchozí (Sonnet)",
         "clovek": {**{k: None for k in KRITERIA}, "poznamka": ""},
     })
 
