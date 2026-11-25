@@ -98,7 +98,9 @@ def zavolej_ai(text, model="claude-haiku-5-5"):
     odpoved = client.messages.create(
         model=model,
         max_tokens=1000,
-        system=SYSTEM,
+        # Prompt caching: pravidla a nástroj jsou u každého volání stejné.
+        # Anthropic si je „zapamatuje" a další volání je účtuje výrazně levněji.
+        system=[{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}],
         tools=[NASTROJ],
         tool_choice={"type": "tool", "name": "zapis_poptavku"},
         messages=[{"role": "user", "content": f"<poptavka>\n{predzpracuj(text)}\n</poptavka>"}],

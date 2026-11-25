@@ -42,7 +42,9 @@ def napis_odpoved(poptavka, akce, podklady, model="claude-haiku-5-5"):
     odpoved = client.messages.create(
         model=model,
         max_tokens=800,
-        system=SYSTEM_ODPOVED,
+        # Prompt caching: pravidla a nástroj jsou u každého volání stejné.
+        # Anthropic si je „zapamatuje" a další volání je účtuje výrazně levněji.
+        system=[{"type": "text", "text": SYSTEM_ODPOVED, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": (
             f"<poptavka>\n{poptavka}\n</poptavka>\n\n"
             f"<podklady>\n{podklady}\n</podklady>\n\n"
