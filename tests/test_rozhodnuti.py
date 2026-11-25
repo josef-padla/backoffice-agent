@@ -52,3 +52,15 @@ def test_popis_mista_rozlisuje_strany():
 def test_rozpis_v_anglictine():
     r = rozpis_ceny({"práce": 3960, "doprava": 2500}, 6460, "en")
     assert "labour" in r and "Total (approx.): 6 460 CZK" in r and "práce" not in r
+
+
+def test_okoli_mesta_neptame_se_na_cil():
+    # chyba z ručního hodnocení (P14): zákazník napsal, že cíl neví – nemáme se na něj ptát
+    akce, chybi = rozhodni(udaje(kam=None, kam_priblizne="Zlín", kam_je_dum=None))
+    assert akce == "nabidka", chybi
+
+
+def test_bez_cile_a_bez_okoli_se_ptame():
+    akce, chybi = rozhodni(udaje(kam=None, kam_priblizne=None))
+    assert akce == "doptat"
+    assert any("kam se stěhujete" in c for c in chybi)

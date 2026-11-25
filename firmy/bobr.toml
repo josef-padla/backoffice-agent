@@ -13,6 +13,8 @@ baleni_za_hodinu = 450
 krabice_za_kus = 45
 tezky_predmet = 2500
 vikendovy_priplatek = 0.20
+# Když zákazník zná jen oblast cíle („okolí Zlína"), počítáme vzdálenost k městu + tuhle rezervu
+rezerva_km_okoli = 15
 
 [odhad_hodin]
 "1+kk" = 3

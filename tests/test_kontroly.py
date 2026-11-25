@@ -40,3 +40,13 @@ def test_prompt_obsahuje_vsechny_obce_firmy():
     # Seznam obcí v promptu se skládá z konfigurace firmy – když firma přidá obec, musí se objevit i tady
     from backoffice_agent.extrakce import SYSTEM, firma
     assert all(obec in SYSTEM for obec in firma["mesta"])
+
+
+def test_okoli_nezname_mesto_se_ignoruje():
+    udaje, zasahy = zkontroluj(surove(kam=None, kam_priblizne="Praha"))
+    assert udaje["kam_priblizne"] is None and zasahy
+
+
+def test_okoli_zname_mesto_se_normalizuje():
+    udaje, _ = zkontroluj(surove(kam=None, kam_priblizne="zlin"))
+    assert udaje["kam_priblizne"] == "Zlín"

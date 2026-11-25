@@ -42,6 +42,10 @@ NASTROJ = {
             "vytah_odkud": {"type": ["boolean", "null"]},
             "patro_kam": {"type": ["integer", "null"]},
             "vytah_kam": {"type": ["boolean", "null"]},
+            "kam_priblizne": {"type": ["string", "null"], "description": (
+                "Jen když zákazník napíše, že cíl přesně neví, ale uvede okolí konkrétního města "
+                "(např. 'někam do okolí Zlína', 'k Olomouci'): název toho města v 1. pádě ('Zlín'). "
+                "U oblastí bez konkrétního města (např. 'na Valašsko') a ve všech ostatních případech null.")},
             "kam_je_dum": {"type": ["boolean", "null"], "description": (
                 "true, pokud se stěhuje DO rodinného domu (pak patro v cíli není potřeba); "
                 "false, pokud do bytu; null, pokud to z textu nejde poznat.")},
@@ -61,7 +65,7 @@ NASTROJ = {
             },
         },
         "required": ["typ_zakazky", "jmeno", "datum", "odkud", "kam", "velikost", "patro_odkud",
-                     "vytah_odkud", "patro_kam", "vytah_kam", "kam_je_dum", "tezke_predmety", "vikend",
+                     "vytah_odkud", "patro_kam", "vytah_kam", "kam_priblizne", "kam_je_dum", "tezke_predmety", "vikend",
                      "jazyk", "je_obchodni_nabidka", "chybejici_udaje"],
     },
 }
@@ -135,6 +139,13 @@ def zkontroluj(surove):
         elif spravne != puvodni:
             zasahy.append(f"{pole}: '{puvodni}' → '{spravne}'")
             udaje[pole] = spravne
+
+    # Přibližný cíl („okolí Zlína") bereme jen u města, které firma zná
+    if udaje.get("kam_priblizne"):
+        spravne, _ = over_mesto(udaje["kam_priblizne"], firma)
+        if spravne is None:
+            zasahy.append(f"kam_priblizne '{udaje['kam_priblizne']}' firma nezná – ignorováno")
+        udaje["kam_priblizne"] = spravne
 
     return udaje, zasahy
 

@@ -41,7 +41,8 @@ def rozhodni(udaje):
         chybi.append("velikost bytu (např. 2+1) nebo zda jde o rodinný dům")
     if udaje["odkud"] is None:
         chybi.append("odkud se stěhujete (obec)")
-    if udaje["kam"] is None:
+    priblizne = udaje["kam"] is None and udaje.get("kam_priblizne")
+    if udaje["kam"] is None and not priblizne:
         chybi.append("kam se stěhujete (obec)")
 
     # Patra a výtahy na OBOU koncích – bez nich by cena byla podhodnocená
@@ -50,7 +51,8 @@ def rozhodni(udaje):
             chybi.append("ve kterém patře je současný byt a zda je v domě výtah")
         elif udaje["patro_odkud"] > 0 and udaje["vytah_odkud"] is None:
             chybi.append("zda je v domě, ze kterého se stěhujete, výtah")
-    if not udaje.get("kam_je_dum"):
+    # Když cíl zákazník zatím nezná (jen „okolí Zlína"), na patro v cíli se neptáme – nemůže ho vědět
+    if not udaje.get("kam_je_dum") and not priblizne:
         if udaje["patro_kam"] is None:
             chybi.append("ve kterém patře je nový byt a zda je tam výtah (případně že jde o rodinný dům)")
         elif udaje["patro_kam"] > 0 and udaje["vytah_kam"] is None:
@@ -79,7 +81,10 @@ def sestav_podklady(udaje, akce, duvody, rozhodnuti):
     if akce == "nabidka":
         radky += [
             f"Odkud: {popis_mista(udaje['odkud'], udaje['patro_odkud'], udaje['vytah_odkud'], udaje['velikost'] == 'dum')}",
-            f"Kam: {popis_mista(udaje['kam'], udaje['patro_kam'], udaje['vytah_kam'], udaje.get('kam_je_dum'))}",
+            (f"Kam: {popis_mista(udaje['kam'], udaje['patro_kam'], udaje['vytah_kam'], udaje.get('kam_je_dum'))}"
+             if udaje["kam"] is not None else
+             f"Kam: zatím neznámé, zákazník uvádí okolí obce {udaje['kam_priblizne']} – cena je ODHAD "
+             f"s rezervou na vzdálenost; napiš to zákazníkovi a požádej, ať cíl upřesní, až ho bude znát"),
             f"Velikost: {udaje['velikost']}",
             f"Termín: {udaje['datum']}",
         ]
@@ -122,7 +127,11 @@ def zpracuj_poptavku(text, model="claude-haiku-5-5", model_pisatel=None):
     rozpis = None
     if akce == "nabidka":
         _, km_odkud = over_mesto(udaje["odkud"], firma)
-        _, km_kam = over_mesto(udaje["kam"], firma)
+        if udaje["kam"] is not None:
+            _, km_kam = over_mesto(udaje["kam"], firma)
+        else:  # jen „okolí X": vzdálenost k X + rezerva z konfigurace firmy
+            _, km_kam = over_mesto(udaje["kam_priblizne"], firma)
+            km_kam += firma["cenik"].get("rezerva_km_okoli", 0)
         patra = patra_bez_vytahu(udaje["patro_odkud"], udaje["vytah_odkud"]) \
               + patra_bez_vytahu(udaje["patro_kam"], udaje["vytah_kam"])
         km = max(km_odkud, km_kam)  # zjednodušení: vzdálenost ze Zlína k vzdálenějšímu místu
