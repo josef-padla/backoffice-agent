@@ -36,9 +36,9 @@
       "cestina": false,
       "osloveni": true,
       "jen_podklady": true,
-      "ucel": true,
+      "ucel": false,
       "ton": true,
-      "poznamka": "míchá 'my' (děkujeme) a 'já' (ráda bych připravila); SYSTÉM: chybí dotaz na patro v cíli"
+      "poznamka": "míchá 'my' (děkujeme) a 'já' (ráda bych připravila); SYSTÉM: chybí dotaz na patro v cíli; účel ❌: neptá se na patro a výtah v cíli (opraveno po kalibraci s hodnotitelem)"
     }
   },
   {
@@ -50,9 +50,9 @@
       "cestina": true,
       "osloveni": false,
       "jen_podklady": true,
-      "ucel": true,
+      "ucel": false,
       "ton": true,
-      "poznamka": "'Hano' → 'paní Hano'; SYSTÉM: chybí dotaz na patro v cíli"
+      "poznamka": "'Hano' → 'paní Hano'; SYSTÉM: chybí dotaz na patro v cíli; účel ❌: neptá se na patro a výtah v cíli (opraveno po kalibraci s hodnotitelem)"
     }
   },
   {
@@ -78,9 +78,9 @@
       "cestina": true,
       "osloveni": true,
       "jen_podklady": true,
-      "ucel": true,
+      "ucel": false,
       "ton": true,
-      "poznamka": "SYSTÉM: chybí dotaz na patro v cíli"
+      "poznamka": "SYSTÉM: chybí dotaz na patro v cíli; účel ❌: neptá se na patro a výtah v cíli (opraveno po kalibraci s hodnotitelem)"
     }
   },
   {
