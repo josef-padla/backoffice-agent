@@ -42,6 +42,18 @@ NASTROJ = {
             "vytah_odkud": {"type": ["boolean", "null"]},
             "patro_kam": {"type": ["integer", "null"]},
             "vytah_kam": {"type": ["boolean", "null"]},
+            "kam_je_dum": {"type": ["boolean", "null"], "description": (
+                "true, pokud se stěhuje DO rodinného domu (pak patro v cíli není potřeba); "
+                "false, pokud do bytu; null, pokud to z textu nejde poznat.")},
+            "tezke_predmety": {"type": "integer", "description": (
+                "Počet těžkých předmětů, které vyžadují zvláštní manipulaci (piano, pianino, klavír, trezor). "
+                "Běžný nábytek a spotřebiče sem nepatří. 0, pokud žádné.")},
+            "vikend": {"type": ["boolean", "null"], "description": (
+                "true, pokud zákazník chce stěhovat v sobotu nebo v neděli; false, pokud jde jasně o všední den; "
+                "null, pokud den v týdnu neuvádí.")},
+            "jazyk": {"type": "string", "enum": ["cs", "sk", "en"], "description": "Jazyk, kterým zákazník píše."},
+            "je_obchodni_nabidka": {"type": "boolean", "description": (
+                "true, pokud zpráva není poptávka, ale nabídka služeb nebo spolupráce od jiné firmy (spam, reklama).")},
             "chybejici_udaje": {
                 "type": "array",
                 "items": {"type": "string"},
@@ -49,7 +61,8 @@ NASTROJ = {
             },
         },
         "required": ["typ_zakazky", "jmeno", "datum", "odkud", "kam", "velikost", "patro_odkud",
-                     "vytah_odkud", "patro_kam", "vytah_kam", "chybejici_udaje"],
+                     "vytah_odkud", "patro_kam", "vytah_kam", "kam_je_dum", "tezke_predmety", "vikend",
+                     "jazyk", "je_obchodni_nabidka", "chybejici_udaje"],
     },
 }
 

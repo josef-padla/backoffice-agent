@@ -17,10 +17,14 @@ LOGY = KOREN / "logy"
 
 
 def rozhodni(udaje):
-    """Kód rozhodne, co s poptávkou: 'nabidka', 'doptat', nebo 'predat_cloveku'."""
+    """Kód rozhodne, co se zprávou: 'nabidka', 'doptat', 'predat_cloveku', nebo 'bez_odpovedi'."""
     typ = udaje["typ_zakazky"]
 
-    # Zakázky, které se automaticky nenaceňují, a zprávy, které nejsou poptávka
+    # Obchodní nabídky a spam: neodpovídáme, jen označíme pro člověka
+    if typ == "neni_poptavka" and udaje.get("je_obchodni_nabidka"):
+        return "bez_odpovedi", ["obchodní nabídka / spam – neodpovídáme, jen označit"]
+
+    # Zakázky, které se automaticky nenaceňují, a zprávy, které nejsou poptávka (reklamace, dotazy)
     if typ in ("cast_vybaveni", "jednotlive_kusy", "kancelar", "neni_poptavka"):
         return "predat_cloveku", [f"typ zakázky '{typ}' se automaticky nenaceňuje"]
 
@@ -36,12 +40,56 @@ def rozhodni(udaje):
         chybi.append("odkud se stěhujete (obec)")
     if udaje["kam"] is None:
         chybi.append("kam se stěhujete (obec)")
-    if udaje["velikost"] != "dum" and udaje["patro_odkud"] is None:
-        chybi.append("ve kterém patře je současný byt a zda je v domě výtah")
+
+    # Patra a výtahy na OBOU koncích – bez nich by cena byla podhodnocená
+    if udaje["velikost"] != "dum":
+        if udaje["patro_odkud"] is None:
+            chybi.append("ve kterém patře je současný byt a zda je v domě výtah")
+        elif udaje["patro_odkud"] > 0 and udaje["vytah_odkud"] is None:
+            chybi.append("zda je v domě, ze kterého se stěhujete, výtah")
+    if not udaje.get("kam_je_dum"):
+        if udaje["patro_kam"] is None:
+            chybi.append("ve kterém patře je nový byt a zda je tam výtah (případně že jde o rodinný dům)")
+        elif udaje["patro_kam"] > 0 and udaje["vytah_kam"] is None:
+            chybi.append("zda je v novém domě výtah")
+
     if chybi:
         return "doptat", chybi
-
     return "nabidka", []
+
+
+def popis_mista(obec, patro, vytah, je_dum):
+    """Srozumitelný popis jednoho konce stěhování pro podklady AI."""
+    if je_dum:
+        return f"{obec}, rodinný dům"
+    if patro is None:
+        return f"{obec}, patro neuvedeno"
+    if patro == 0:
+        return f"{obec}, přízemí"
+    vytah_text = {True: "s výtahem", False: "bez výtahu", None: "výtah neuveden"}[vytah]
+    return f"{obec}, {patro}. patro, {vytah_text}"
+
+
+def sestav_podklady(udaje, akce, duvody, rozhodnuti):
+    """Kód připraví pro AI fakta – po stranách (odkud/kam), aby si je nemohla zaměnit."""
+    radky = [f"Jméno: {udaje['jmeno']}", f"Jazyk odpovědi: {udaje.get('jazyk', 'cs')}"]
+    if akce == "nabidka":
+        radky += [
+            f"Odkud: {popis_mista(udaje['odkud'], udaje['patro_odkud'], udaje['vytah_odkud'], udaje['velikost'] == 'dum')}",
+            f"Kam: {popis_mista(udaje['kam'], udaje['patro_kam'], udaje['vytah_kam'], udaje.get('kam_je_dum'))}",
+            f"Velikost: {udaje['velikost']}",
+            f"Termín: {udaje['datum']}",
+        ]
+        if rozhodnuti.get("tezke_predmety"):
+            radky.append(f"Těžké předměty v ceně: {rozhodnuti['tezke_predmety']}")
+        if rozhodnuti.get("vikend"):
+            radky.append("Víkendový příplatek je v ceně započten.")
+    elif akce == "doptat":
+        radky.append("Chybějící údaje:")
+        radky += [f"- {d}" for d in duvody]
+    else:
+        radky.append("(Poptávku vyřeší kolega osobně.)")
+    return "\n".join(radky)
 
 
 def zpracuj_poptavku(text, model="claude-haiku-5-5"):
@@ -73,27 +121,26 @@ def zpracuj_poptavku(text, model="claude-haiku-5-5"):
         patra = patra_bez_vytahu(udaje["patro_odkud"], udaje["vytah_odkud"]) \
               + patra_bez_vytahu(udaje["patro_kam"], udaje["vytah_kam"])
         km = max(km_odkud, km_kam)  # zjednodušení: vzdálenost ze Zlína k vzdálenějšímu místu
-        polozky, celkem = spocitej_cenu(firma, udaje["velikost"], km=km, patra_bez_vytahu=patra)
-        rozpis = rozpis_ceny(polozky, celkem)
-        rozhodnuti.update({"km": km, "patra_bez_vytahu": patra, "polozky": polozky, "celkem": celkem})
+        tezke = udaje.get("tezke_predmety") or 0
+        vikend = bool(udaje.get("vikend"))
+        polozky, celkem = spocitej_cenu(firma, udaje["velikost"], km=km, patra_bez_vytahu=patra,
+                                        tezke_predmety=tezke, vikend=vikend)
+        rozpis = rozpis_ceny(polozky, celkem, udaje.get("jazyk", "cs"))
+        rozhodnuti.update({"km": km, "patra_bez_vytahu": patra, "tezke_predmety": tezke, "vikend": vikend,
+                           "polozky": polozky, "celkem": celkem})
     kroky.append(rozhodnuti)
 
-    # 5. Návrh odpovědi (AI) – podklady sestaví kód, AI z nich jen napíše text
-    if akce == "nabidka":
-        podklady = (f"Jméno: {udaje['jmeno']}\nOdkud: {udaje['odkud']}\nKam: {udaje['kam']}\n"
-                    f"Velikost: {udaje['velikost']}\nTermín: {udaje['datum']}\n"
-                    f"Patra bez výtahu celkem: {rozhodnuti['patra_bez_vytahu']}")
-    elif akce == "doptat":
-        podklady = f"Jméno: {udaje['jmeno']}\nChybějící údaje:\n" + "\n".join(f"- {c}" for c in duvody)
+    # 5. + 6. Návrh odpovědi (AI) a její kontrola (kód) – u spamu neodpovídáme vůbec
+    if akce == "bez_odpovedi":
+        hotova, problemy = None, []
     else:
-        podklady = f"Jméno: {udaje['jmeno']}\n(Poptávku vyřeší kolega osobně.)"
-    navrh, usage2 = napis_odpoved(text, akce, podklady, model)
-    kroky.append({"krok": "Návrh odpovědi", "kdo": "AI", "model": model, "vystup": navrh,
-                  "tokeny": {"vstup": usage2.input_tokens, "vystup": usage2.output_tokens}})
-
-    # 6. Kontrola odpovědi (kód) – dosazení ceny a kontrola, že AI nepsala vlastní částky
-    hotova, problemy = zkontroluj_odpoved(navrh, akce, rozpis)
-    kroky.append({"krok": "Kontrola odpovědi", "kdo": "kód", "problemy": problemy})
+        podklady = sestav_podklady(udaje, akce, duvody, rozhodnuti)
+        navrh, usage2 = napis_odpoved(text, akce, podklady, model)
+        kroky.append({"krok": "Návrh odpovědi", "kdo": "AI", "model": model, "podklady": podklady,
+                      "vystup": navrh,
+                      "tokeny": {"vstup": usage2.input_tokens, "vystup": usage2.output_tokens}})
+        hotova, problemy = zkontroluj_odpoved(navrh, akce, rozpis)
+        kroky.append({"krok": "Kontrola odpovědi", "kdo": "kód", "problemy": problemy})
 
     zaznam = {
         "cas": datetime.now().isoformat(timespec="seconds"),
@@ -124,7 +171,8 @@ def vypis(zaznam):
             v = k["vystup"]
             print(f"  typ: {v['typ_zakazky']}, velikost: {v['velikost']}, odkud: {v['odkud']}, kam: {v['kam']}")
             print(f"  patro odkud: {v['patro_odkud']} (výtah {v['vytah_odkud']}), "
-                  f"patro kam: {v['patro_kam']} (výtah {v['vytah_kam']})")
+                  f"patro kam: {v['patro_kam']} (výtah {v['vytah_kam']}, dům: {v.get('kam_je_dum')})")
+            print(f"  těžké předměty: {v.get('tezke_predmety')}, víkend: {v.get('vikend')}, jazyk: {v.get('jazyk')}")
             print(f"  tokeny: {k['tokeny']['vstup']} in / {k['tokeny']['vystup']} out")
         elif k["krok"] == "Kontroly kódem":
             for z in k["zasahy"]:
@@ -140,6 +188,9 @@ def vypis(zaznam):
             if k["akce"] == "nabidka":
                 print(f"  celkem: {k['celkem']} Kč")
         elif k["krok"] == "Návrh odpovědi":
+            print("  podklady pro AI:")
+            for r in k["podklady"].splitlines():
+                print(f"    {r}")
             print(f"  tokeny: {k['tokeny']['vstup']} in / {k['tokeny']['vystup']} out")
         elif k["krok"] == "Kontrola odpovědi":
             for p in k["problemy"]:
@@ -148,9 +199,12 @@ def vypis(zaznam):
                 print("  v pořádku")
 
     print("\n" + "=" * 50)
-    print("NÁVRH ODPOVĚDI" + ("  (⚠ K RUČNÍ ÚPRAVĚ)" if zaznam["k_rucni_uprave"] else ""))
-    print("=" * 50)
-    print(zaznam["odpoved"])
+    if zaznam["odpoved"] is None:
+        print("BEZ ODPOVĚDI (označeno pro člověka)")
+    else:
+        print("NÁVRH ODPOVĚDI" + ("  (⚠ K RUČNÍ ÚPRAVĚ)" if zaznam["k_rucni_uprave"] else ""))
+        print("=" * 50)
+        print(zaznam["odpoved"])
     print(f"\nHotovo za {zaznam['doba_s']} s")
 
 

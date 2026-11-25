@@ -231,9 +231,7 @@
       "kam": "Zlín",
       "patro_kam": 3,
       "vytah_kam": false,
-      "typ_zakazky": "jednotlive_kusy"
-    },
-    "pozdeji": {
+      "typ_zakazky": "jednotlive_kusy",
       "tezke_predmety": 1
     }
   },

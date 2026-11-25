@@ -23,7 +23,7 @@ Pravidla:
 ZADANI = {
     "nabidka": (
         "Napiš odpověď s orientační nabídkou. Na samostatný řádek vlož přesně značku {{CENA}} "
-        "– kód za ni doplní rozpis ceny. Žádnou částku sám nepiš. Krátce shrň, z čeho nabídka vychází "
+        "– kód za ni doplní rozpis ceny v jazyce zákazníka. Žádnou částku sám nepiš. Krátce shrň, z čeho nabídka vychází "
         "(podklady), a napiš, že jde o orientační cenu, kterou potvrdíme po upřesnění detailů."
     ),
     "doptat": (
@@ -54,11 +54,25 @@ def napis_odpoved(poptavka, akce, podklady, model="claude-haiku-5-5"):
     return text.strip(), odpoved.usage
 
 
-def rozpis_ceny(polozky, celkem):
-    def kc(castka):
-        return f"{castka:,}".replace(",", " ") + " Kč"
-    radky = [f"- {nazev}: {kc(castka)}" for nazev, castka in polozky.items() if castka]
-    radky.append(f"Celkem (orientačně): {kc(celkem)}")
+# Popisky rozpisu v jazyce zákazníka. Čísla dál počítá jen kód – překládají se jen názvy.
+POPISKY = {
+    "cs": {"celkem": "Celkem (orientačně)", "mena": "Kč"},
+    "sk": {"práce": "práca", "doprava": "doprava", "patra bez výtahu": "poschodia bez výťahu",
+           "balení": "balenie", "těžké předměty": "ťažké predmety", "víkendový příplatek": "víkendový príplatok",
+           "celkem": "Spolu (orientačne)", "mena": "Kč"},
+    "en": {"práce": "labour", "doprava": "transport", "patra bez výtahu": "floors without a lift",
+           "balení": "packing", "těžké předměty": "heavy items", "víkendový příplatek": "weekend surcharge",
+           "celkem": "Total (approx.)", "mena": "CZK"},
+}
+
+
+def rozpis_ceny(polozky, celkem, jazyk="cs"):
+    p = POPISKY.get(jazyk, POPISKY["cs"])
+
+    def castka_text(castka):
+        return f"{castka:,}".replace(",", " ") + " " + p["mena"]
+    radky = [f"- {p.get(nazev, nazev)}: {castka_text(castka)}" for nazev, castka in polozky.items() if castka]
+    radky.append(f"{p['celkem']}: {castka_text(celkem)}")
     return "\n".join(radky)
 
 

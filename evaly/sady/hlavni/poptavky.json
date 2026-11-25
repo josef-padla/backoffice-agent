@@ -146,9 +146,7 @@
       "vytah_odkud": false,
       "patro_kam": 2,
       "vytah_kam": false,
-      "typ_zakazky": "cele_stehovani"
-    },
-    "pozdeji": {
+      "typ_zakazky": "cele_stehovani",
       "vikend": true
     }
   },
@@ -309,9 +307,7 @@
       "kam": "Otrokovice",
       "patro_odkud": 2,
       "vytah_odkud": false,
-      "typ_zakazky": "cele_stehovani"
-    },
-    "pozdeji": {
+      "typ_zakazky": "cele_stehovani",
       "tezke_predmety": 1,
       "vikend": true
     }
@@ -347,9 +343,7 @@
       "kam": "Brno",
       "patro_odkud": 0,
       "patro_kam": 0,
-      "typ_zakazky": "cele_stehovani"
-    },
-    "pozdeji": {
+      "typ_zakazky": "cele_stehovani",
       "tezke_predmety": 1,
       "vikend": true
     }

@@ -1,0 +1,44 @@
+{
+  "sada": "hlavni",
+  "model": "claude-haiku-5-5",
+  "opakovani": 3,
+  "behy": [
+    {
+      "spravna_pole": 297,
+      "celkem_pole": 299,
+      "spravne_poptavky": 48,
+      "celkem_poptavek": 50
+    },
+    {
+      "spravna_pole": 296,
+      "celkem_pole": 299,
+      "spravne_poptavky": 47,
+      "celkem_poptavek": 50
+    },
+    {
+      "spravna_pole": 298,
+      "celkem_pole": 299,
+      "spravne_poptavky": 49,
+      "celkem_poptavek": 50
+    }
+  ],
+  "prumer_poptavek_bez_chyby": 0.96,
+  "nestabilni": [
+    "P03",
+    "P20"
+  ],
+  "vzdy_spatne": [
+    "P32"
+  ],
+  "tokeny_in": 333918,
+  "tokeny_out": 77995,
+  "doba_s": 316.8,
+  "chyby": [
+    "běh 1: P03 (úplná) odkud: čekal 'Fryšták', dostal 'Fryštát'",
+    "běh 1: P32 (těžká: oprava v textu) odkud: čekal 'Fryšták', dostal 'Fryštát'",
+    "běh 2: P03 (úplná) odkud: čekal 'Fryšták', dostal 'Fryštát'",
+    "běh 2: P20 (chaotická) odkud: čekal 'Uherské Hradiště', dostal 'Uherský Hradiště'",
+    "běh 2: P32 (těžká: oprava v textu) odkud: čekal 'Fryšták', dostal 'Fryštát'",
+    "běh 3: P32 (těžká: oprava v textu) odkud: čekal 'Fryšták', dostal 'Fryštát'"
+  ]
+}
