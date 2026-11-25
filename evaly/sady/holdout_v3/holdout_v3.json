@@ -1,0 +1,341 @@
+[
+  {
+    "id": "W01",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nchtěla bych se informovat, zda máte volný termín na stěhování bytu 2+1 z Otrokovic do Zlína, ideálně v průběhu prosince. Jedná se o byt ve 3. patře s výtahem, v cílovém bytě je výtah také. Potřebovali bychom přestěhovat veškerý nábytek, spotřebiče a krabice s osobními věcmi. Mohli byste mi prosím poslat orientační cenovou nabídku?\n\nDěkuji a přeji hezký den.\n\nPetra Novotná",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": "2+1",
+      "odkud": "Otrokovice",
+      "kam": "Zlín",
+      "patro_odkud": 3,
+      "vytah_odkud": true,
+      "vytah_kam": true
+    }
+  },
+  {
+    "id": "W02",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den, potřeboval bych převézt gauč, dvě skříně, pračku a asi 10 krabic z Uherského Hradiště (Mařatice) do Kunovic. Jaká by byla přibližná cena? Díky, Martin.",
+    "ocekavano": {
+      "typ_zakazky": "jednotlive_kusy",
+      "velikost": null,
+      "odkud": "Uherské Hradiště",
+      "kam": "Kunovice"
+    }
+  },
+  {
+    "id": "W03",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Vážení,\n\nobracím se na Vás s žádostí o cenovou nabídku na kompletní stěhování rodinného domu z Kroměříže do obce Troubky na Přerovsku. Jedná se o dům 5+1, včetně garáže a menší dílny. Většinu věcí máme již zabalenou, ale uvítali bychom také možnost zapůjčení stěhovacích krabic. Mezi stěhovanými předměty bude lednice, pračka, sušička, několik masivních skříní, jídelní stůl, postele a běžné vybavení domácnosti. Na obou adresách je přístup přímo k domu, bez schodů.\n\nStěhování plánujeme na druhou polovinu ledna. Prosím o informaci, zda nabízíte také demontáž a následnou montáž nábytku.\n\nPředem děkuji za odpověď.\n\nS pozdravem\n\nIng. Pavel Dvořák",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": "dum",
+      "odkud": "Kroměříž",
+      "kam": "Troubky",
+      "kam_je_dum": true
+    }
+  },
+  {
+    "id": "W04",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nstěhujete i pianina? Potřebovala bych dostat pianino z 1. patra ve Spytihněvi do přízemí v Bělově. Je poměrně těžké a nechci riskovat, že ho někdo poškodí. Šlo by to třeba příští sobotu?\n\nDěkuji, Jana K.",
+    "ocekavano": {
+      "typ_zakazky": "jednotlive_kusy",
+      "velikost": null,
+      "odkud": "Spytihněv",
+      "kam": "Bělov",
+      "patro_odkud": 1,
+      "patro_kam": 0,
+      "tezke_predmety": 1,
+      "vikend": true
+    }
+  },
+  {
+    "id": "W05",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nrád bych poptal stěhování z Bystřice pod Hostýnem do Brna, konkrétně do Žabovřesk. Jedná se o byt 3+kk, vybavení standardní domácnosti, žádné mimořádně těžké věci. Na výchozí adrese jsme ve 4. patře a výtah je k dispozici, v Brně je byt ve 2. patře bez výtahu.\n\nPreferoval bych sobotu 12. prosince, případně neděli. Je možné zajistit stěhování i mimo pracovní dny? Zajímala by mě také cena včetně dopravy.\n\nDěkuji za informaci.\n\nTomáš Hruška",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": "3+kk",
+      "odkud": "Bystřice pod Hostýnem",
+      "kam": "Brno",
+      "patro_odkud": 4,
+      "vytah_odkud": true,
+      "patro_kam": 2,
+      "vytah_kam": false,
+      "vikend": true
+    }
+  },
+  {
+    "id": "W06",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý deň,\n\nchcela by som sa opýtať, či realizujete aj sťahovanie do zahraničia, konkrétne z Uherského Brodu do Trenčína. Išlo by o menší dvojizbový byt, približne 20 krabíc, posteľ, sedačku, práčku a niekoľko skriniek. Termín by nám vyhovoval niekedy začiatkom januára.\n\nVedeli by ste nám pripraviť cenovú ponuku?\n\nĎakujem pekne.\n\nMartina Poláková",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "odkud": "Uherský Brod",
+      "kam": "Trenčín"
+    }
+  },
+  {
+    "id": "W07",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\njsme menší účetní firma se sídlem ve Zlíně na Jižních Svazích a od ledna budeme přesouvat kancelář do nových prostor v centru města. Potřebovali bychom přestěhovat 6 pracovních stolů, 8 kancelářských židlí, 4 skříně, dvě tiskárny, serverovou skříň a přibližně 30 krabic s dokumenty.\n\nObě kanceláře se nacházejí ve druhém patře, přičemž v cílové budově je nákladní výtah. Rádi bychom vše zvládli během jednoho dopoledne, ideálně v pátek.\n\nProsím o informaci o dostupnosti a orientační ceně.\n\nS pozdravem\n\nBc. Lenka Malá",
+    "ocekavano": {
+      "typ_zakazky": "kancelar",
+      "velikost": null,
+      "odkud": "Zlín",
+      "kam": "Zlín",
+      "patro_odkud": 2,
+      "patro_kam": 2,
+      "vytah_kam": true
+    }
+  },
+  {
+    "id": "W08",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobry den, potřebuju co nejdřív odvézt lednici, pračku a skříň z Luhačovic do Pozlovic. Šlo by třeba zítra odpoledne? Díky moc. Michal",
+    "ocekavano": {
+      "typ_zakazky": "jednotlive_kusy",
+      "velikost": null,
+      "odkud": "Luhačovice",
+      "kam": "Pozlovice"
+    }
+  },
+  {
+    "id": "W09",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nmám trochu netradiční prosbu. Potřebuji přestěhovat velké akvárium o rozměrech 180 × 60 × 60 cm z rodinného domu v obci Hlohovec u Břeclavi do domu v Hustopečích. Akvárium bude samozřejmě předem vypuštěné a ryby i voda se převezou zvlášť. Jde mi hlavně o bezpečnou manipulaci se samotnou nádrží, která je dost těžká a křehká.\n\nZajišťujete podobné převozy? Případně bych rád věděl, zda máte vhodné vybavení a kolik by služba přibližně stála.\n\nDěkuji.\n\nRadek Šimek",
+    "ocekavano": {
+      "typ_zakazky": "jednotlive_kusy",
+      "velikost": null,
+      "odkud": "Hlohovec",
+      "kam": "Hustopeče",
+      "kam_je_dum": true,
+      "tezke_predmety": 1
+    }
+  },
+  {
+    "id": "W10",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nbydlíme v panelovém domě v Otrokovicích na Trávníkách a potřebovali bychom přestěhovat vybavení bytu do jiného bytu ve stejném domě, jen ve vedlejším vchodě. Jedná se hlavně o sedačku, postele, skříně a několik desítek krabic. Oba byty jsou ve 3. patře a výtah je společný.\n\nMůžete nám prosím sdělit, zda se dá objednat i takto krátké stěhování a jaká by byla minimální cena?\n\nDěkuji.\n\nAlena Černá",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": null,
+      "odkud": "Otrokovice",
+      "kam": "Otrokovice",
+      "patro_odkud": 3,
+      "vytah_odkud": true,
+      "patro_kam": 3,
+      "vytah_kam": true
+    }
+  },
+  {
+    "id": "W11",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Hello,\n\nI am looking for a small moving company to help me move from Zlín to Prague, preferably during the first week of January. I have a one-bedroom apartment with a bed, sofa, desk, wardrobe, washing machine and around 15 boxes. My current apartment is on the second floor with no elevator, while the new place in Prague has an elevator.\n\nCould you please let me know your availability and an estimated price? I would also appreciate information about whether you provide packing materials.\n\nBest regards,\n\nDaniel Miller",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "odkud": "Zlín",
+      "kam": "Praha",
+      "patro_odkud": 2,
+      "vytah_odkud": false,
+      "vytah_kam": true
+    }
+  },
+  {
+    "id": "W12",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nzatím ještě přesně nevím, kam se budu stěhovat, pravděpodobně někam k Olomouci, třeba Velká Bystřice nebo okolí. Aktuálně bydlím v Uherském Hradišti a chtěl bych se předběžně informovat, kolik asi stojí stěhování menšího bytu 1+1. Mám postel, sedačku, komodu, televizi, stůl, pár židlí a asi 15 krabic. Je možné cenu stanovit až podle přesné adresy, nebo máte nějaký základní ceník podle velikosti bytu?\n\nDěkuji za odpověď.\n\nMarek Sedláček",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": "1+1",
+      "odkud": "Uherské Hradiště",
+      "kam": null,
+      "kam_priblizne": "Olomouc"
+    }
+  },
+  {
+    "id": "W13",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Vážená stěhovací firma,\n\ndostala jsem na Vás doporučení od známé, která s Vámi byla velmi spokojena. Potřebovala bych se přestěhovat z menšího bytu v Napajedlích do domova pro seniory v Bzenci. Nemám toho mnoho, jednu postel, dvě komody, televizi, křeslo, menší stolek a několik krabic s oblečením a osobními věcmi.\n\nJsem již starší paní a nemám nikoho z rodiny, kdo by mi s tím pomohl. Bylo by možné zajistit i snesení nábytku a jeho umístění v novém pokoji? Také bych ocenila, kdyby pracovníci byli ochotni mi pomoci s rozmístěním věcí.\n\nTermín zatím není pevně stanoven, ale ráda bych vše vyřídila během prosince.\n\nPředem Vám moc děkuji za ochotu.\n\nMarie Konečná",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": null,
+      "odkud": "Napajedla",
+      "kam": "Bzenec"
+    }
+  },
+  {
+    "id": "W14",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nchtěla bych se zeptat na cenu převozu věcí z internátu ve Zlíně na Jižních Svazích do Koryčan. Mám jen postelový rošt, psací stůl, židli, malou ledničku, dvě tašky a asi 6 krabic. Auto nemám a rodiče jsou pracovně pryč. Stačila by mi jedna dodávka a jeden člověk na pomoc. Šlo by to někdy v pátek po obědě?\n\nDíky moc!\n\nEliška",
+    "ocekavano": {
+      "typ_zakazky": "jednotlive_kusy",
+      "velikost": null,
+      "odkud": "Zlín",
+      "kam": "Koryčany"
+    }
+  },
+  {
+    "id": "W15",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\npotřebovali bychom přestěhovat menší kancelářský trezor o hmotnosti přibližně 280 kg z přízemí provozovny v Uherském Ostrohu do nových prostor v Kunovicích. Rozměry trezoru jsou přibližně 70 × 70 × 100 cm. Na obou adresách je bezbariérový přístup, nicméně u cílové adresy jsou dveře poměrně úzké.\n\nRád bych se zeptal, zda máte zkušenosti s manipulací s podobně těžkými předměty a zda disponujete potřebnou technikou.\n\nDěkuji za odpověď.\n\nPetr Horák",
+    "ocekavano": {
+      "typ_zakazky": "jednotlive_kusy",
+      "velikost": null,
+      "odkud": "Uherský Ostroh",
+      "kam": "Kunovice",
+      "patro_odkud": 0,
+      "tezke_predmety": 1
+    }
+  },
+  {
+    "id": "W16",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nobracím se na Vás kvůli stěhování, které proběhlo minulý týden z Kvasic do Kroměříže. Bohužel jsme po vybalení zjistili, že je poškozená horní deska jídelního stolu a také jedna zásuvka komody, která před stěhováním fungovala bez problémů. Fotografie poškození přikládám v příloze.\n\nChtěl bych Vás požádat o vyjádření k situaci a informaci, jakým způsobem lze reklamaci vyřešit. Věřím, že se nám podaří najít rozumné řešení.\n\nS pozdravem\n\nOndřej Marek",
+    "ocekavano": {
+      "typ_zakazky": "neni_poptavka",
+      "velikost": null,
+      "odkud": null,
+      "kam": null
+    }
+  },
+  {
+    "id": "W17",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý deň,\n\npotrebovali by sme presťahovať trojizbový byt z Kroměříža do Hulína (bývame v prenájme a končí nám zmluva). Chceli by sme sa opýtať, či máte voľný termín v sobotu 19. decembra. V byte máme bežný nábytok, dve postele, veľkú rohovú sedačku, chladničku, práčku a približne 25 krabíc. Na pôvodnej adrese je byt na 4. poschodí s výťahom, v novom dome je výťah tiež.\n\nZaujímala by nás celková cena vrátane prípadnej demontáže nábytku.\n\nĎakujem za odpoveď.\n\nPeter Kováč",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "odkud": "Kroměříž",
+      "kam": "Hulín",
+      "patro_odkud": 4,
+      "vytah_odkud": true,
+      "vytah_kam": true,
+      "vikend": true
+    }
+  },
+  {
+    "id": "W18",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nplánujeme přesunout naši malou kavárnu z centra Zlína do nových prostor v Uherském Hradišti. Potřebovali bychom přemístit několik stolů, židlí, barový pult, regály, menší lednici, myčku, kávovar a další vybavení. Nejde o velký podnik, spíše menší provozovnu.\n\nStěhování by mělo proběhnout v pondělí, kdy máme zavřeno. Bylo by možné zajistit také převoz křehkého gastro vybavení a jeho opatrné zabalení?\n\nDěkuji za nabídku.\n\nVeronika Blažková",
+    "ocekavano": {
+      "typ_zakazky": "kancelar",
+      "velikost": null,
+      "odkud": "Zlín",
+      "kam": "Uherské Hradiště"
+    }
+  },
+  {
+    "id": "W19",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nmohl bych Vás poprosit o opětovné zaslání faktury za stěhování, které proběhlo 10. listopadu z Napajedel do Zlína? Bohužel jsem původní e-mail omylem smazal a potřebuji doklad pro zaměstnavatele kvůli proplacení nákladů.\n\nFaktura byla vystavena na jméno Jiří Vaněk.\n\nDěkuji za ochotu a omlouvám se za komplikace.\n\nJiří Vaněk",
+    "ocekavano": {
+      "typ_zakazky": "neni_poptavka",
+      "velikost": null,
+      "odkud": null,
+      "kam": null
+    }
+  },
+  {
+    "id": "W20",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\ndovolujeme si Vás oslovit s nabídkou možné spolupráce v oblasti autodopravy a manipulace s nábytkem. Jsme menší firma z Přerova, která se specializuje na vyklízení bytů, sklepů a pozůstalostí. Občas se nám stává, že zákazníci potřebují také následný převoz zachovalého nábytku na jinou adresu, což momentálně nejsme schopni zajistit vlastními kapacitami.\n\nRádi bychom proto navázali kontakt se stěhovací firmou působící ve Zlíně a okolí. Mohli bychom si vzájemně předávat zakázky podle aktuálních možností a regionu.\n\nPokud by Vás tato forma spolupráce zaujala, budeme rádi za odpověď.\n\nS pozdravem\n\nDavid Procházka\nVyklízíme Morava s.r.o.",
+    "ocekavano": {
+      "typ_zakazky": "neni_poptavka",
+      "velikost": null,
+      "odkud": null,
+      "kam": null
+    }
+  },
+  {
+    "id": "W21",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nchtěla bych se zeptat, zda byste zvládli přestěhovat vybavení menšího podkrovního bytu z obce Březolupy do Starého Města u Uherského Hradiště. Byt je v podkroví staršího domu, do kterého vedou poměrně úzké schody, výtah není. Věcí není příliš mnoho, ale máme tam jednu velkou šatní skříň, kterou bude nutné rozmontovat, dvě postele, sedačku a několik menších kusů nábytku. Termín bychom potřebovali ideálně do konce tohoto roku.\n\nBylo by možné předem domluvit prohlídku, abyste posoudili, zda půjde nábytek bezpečně vynést?\n\nDěkuji.\n\nKlára Bartošová",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": null,
+      "odkud": "Březolupy",
+      "kam": "Staré Město",
+      "vytah_odkud": false
+    }
+  },
+  {
+    "id": "W22",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den, kolik by stálo přestěhování garsonky z Břeclavi (Poštorná) do Hodonína? Je tam jen postel, skříň, komoda, televize, lednice a asi 8 krabic. Děkuji za odpověď, Zuzana Pospíšilová.",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": "1+kk",
+      "odkud": "Břeclav",
+      "kam": "Hodonín"
+    }
+  },
+  {
+    "id": "W23",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\npotřebovali bychom odvézt pouze část vybavení našeho rodinného domu z obce Hvozdná do Slušovic. Nejedná se o kompletní stěhování, protože některé věci zůstávají na původním místě. K převozu bude především velký jídelní stůl, osm židlí, dvě komody, manželská postel, matrace, zahradní nábytek a přibližně 15 krabic.\n\nVěci jsou připravené v přízemí, u nového domu je také vše v přízemí. Termín nám vyhovuje téměř kdykoliv během druhého prosincového týdne.\n\nMůžete nám prosím sdělit, zda účtujete podle počtu hodin, nebo podle množství nábytku a vzdálenosti?\n\nDěkuji.\n\nRadim Jelínek",
+    "ocekavano": {
+      "typ_zakazky": "cast_vybaveni",
+      "velikost": null,
+      "odkud": "Hvozdná",
+      "kam": "Slušovice",
+      "patro_odkud": 0,
+      "patro_kam": 0
+    }
+  },
+  {
+    "id": "W24",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobry den, omlouvam se ze pisu takhle narychlo ale potrebuju do konce tydne prestehovat veci z bytu v Prostejove do Prerova. Je toho dost cca 30 krabic, dve skrine, postel a gauc. Na obou mistech 2 patro ale v Prerove neni vytah. Mate neco volneho? Cena prosim orientacne. Diky moc, Honza",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": null,
+      "odkud": "Prostějov",
+      "kam": "Přerov",
+      "patro_odkud": 2,
+      "patro_kam": 2,
+      "vytah_kam": false
+    }
+  },
+  {
+    "id": "W25",
+    "typ": "poptavka",
+    "kategorie": "holdout v3",
+    "text": "Dobrý den,\n\nobracím se na Vás s dotazem ohledně možnosti stěhování z Jihlavy do Zlína, konkrétně do části Kudlov. V současné době bydlím v pronajatém bytě 2+kk a na konci ledna se budu stěhovat za partnerkou. Rádi bychom využili služeb menší místní firmy, proto jsem narazil na Vaše stránky.\n\nPřevoz by zahrnoval standardní vybavení bytu, tedy sedačku, postel, jídelní stůl, čtyři židle, dvě skříně, pračku, menší lednici, pracovní stůl, knihovnu a zhruba 20 krabic. Na místě nakládky je byt ve 3. patře s výtahem, v cílovém domě se jedná o rodinný dům s přímým přístupem do přízemí. Zároveň bych se rád informoval, zda je možné objednat i demontáž a opětovnou montáž větší skříně.\n\nPřesný termín ještě ladíme, ale předběžně počítáme s posledním lednovým víkendem. Budu rád za orientační cenovou nabídku a informaci, zda byste měli v tomto období volnou kapacitu.\n\nDěkuji Vám za čas a přeji příjemný den.\n\nS pozdravem\n\nFilip Král",
+    "ocekavano": {
+      "typ_zakazky": "cele_stehovani",
+      "velikost": "2+kk",
+      "odkud": "Jihlava",
+      "kam": "Zlín",
+      "patro_odkud": 3,
+      "vytah_odkud": true,
+      "kam_je_dum": true,
+      "vikend": true
+    }
+  }
+]
