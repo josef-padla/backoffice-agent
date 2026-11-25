@@ -1,0 +1,182 @@
+[
+  {
+    "id": "P01",
+    "poptavka": "Dobrý den, prosím o cenu stěhování bytu 2+1 z Holešova do Zlína. Byt je ve 2. patře, výtah tam není. V novém bytě 4. patro s výtahem. Termín 5. dubna. Petr Malý",
+    "akce": "nabidka",
+    "odpoved": "Dobrý den, pane Malý,\n\nděkujeme za Vaši poptávku. Nabídka vychází z těchto údajů:\n\n- stěhování bytu 2+1 z Holešova do Zlína\n- nakládka: 2. patro bez výtahu\n- vykládka: 4. patro s výtahem\n- požadovaný termín: 5. dubna\n\n- práce: 3 960 Kč\n- doprava: 550 Kč\n- patra bez výtahu: 300 Kč\nCelkem (orientačně): 4 810 Kč\n\nJde o orientační cenu, kterou potvrdíme po upřesnění detailů. Pokud nám napíšete, kolik zhruba máte nábytku a krabic, případně zda potřebujete demontáž a montáž nábytku nebo balicí materiál, rádi nabídku zpřesníme. Také nám prosím dejte vědět, zda je v obou lokalitách možné zastavit nákladním autem přímo před domem.\n\nTermín 5. dubna Vám zatím nemůžeme závazně potvrdit, ověříme ho společně s upřesněním nabídky.\n\nS pozdravem\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P05",
+    "poptavka": "Dobrý den, chtěla bych se zeptat na cenu stěhování z bytu 1+1 ve Vsetíně (3. patro, bez výtahu) do Zlína do přízemí. Martina Kolářová",
+    "akce": "nabidka",
+    "odpoved": "Dobrý den, paní Kolářová,\n\nděkujeme za Vaši poptávku. Orientační nabídka vychází z těchto údajů:\n\n- stěhování bytu 1+1,\n- odkud: Vsetín, 3. patro bez výtahu,\n- kam: Zlín, přízemí.\n\n- práce: 2 970 Kč\n- doprava: 825 Kč\n- patra bez výtahu: 450 Kč\nCelkem (orientačně): 4 245 Kč\n\nJde o orientační cenu, kterou potvrdíme po upřesnění detailů. Pro přesnější nabídku nám prosím napište, jaký termín stěhování zvažujete a zda máte větší kusy nábytku nebo jiné věci, které vyžadují zvláštní péči (například pianino, velké skříně či křehké předměty).\n\nRádi odpovíme i na další dotazy.\n\nS pozdravem\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P11",
+    "poptavka": "Dobrý den, kolik stojí stěhování? Stěhujeme se ze Zlína do Otrokovic. Děkuji",
+    "akce": "doptat",
+    "odpoved": "Dobrý den,\n\nděkujeme za Vaši poptávku na stěhování ze Zlína do Otrokovic. Abychom Vám mohli připravit nabídku, potřebovali bychom doplnit pár údajů:\n\n- Jaká je velikost bytu (např. 2+1), nebo jde o rodinný dům?\n- V jakém patře se nachází současný byt a je v domě výtah?\n- V jakém patře se nachází nový byt a je tam výtah (případně zda jde o rodinný dům)?\n\nJakmile nám informace pošlete, připravíme a zašleme Vám nabídku.\n\nS pozdravem\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P12",
+    "poptavka": "Dobrý den, máme byt 3+1 a potřebujeme se přestěhovat koncem měsíce. Kolik by to vyšlo? Hana",
+    "akce": "doptat",
+    "odpoved": "Dobrý den, Hano,\n\nděkujeme za Vaši poptávku. Abychom Vám mohli připravit nabídku, potřebovali bychom ještě doplnit několik údajů:\n\n- Odkud se stěhujete (obec)?\n- Kam se stěhujete (obec)?\n- Ve kterém patře je současný byt a je v domě výtah?\n- Ve kterém patře je nový byt a je tam výtah (případně zda jde o rodinný dům)?\n\nJakmile nám údaje doplníte, pošleme Vám nabídku.\n\nDěkujeme a přejeme hezký den.\n\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P14",
+    "poptavka": "Dobrý den, prosím o cenu. Byt 2+kk, 2. patro. Kam se stěhujeme, ještě přesně nevíme, někam do okolí Zlína.",
+    "akce": "doptat",
+    "odpoved": "Dobrý den,\n\nděkujeme za Vaši poptávku. Abychom Vám mohli připravit nabídku, potřebujeme ještě doplnit několik údajů:\n\n- Z jaké obce se stěhujete?\n- Do jaké obce se stěhujete? Pokud to přesně nevíte, stačí orientačně.\n- Je v domě, ze kterého se stěhujete, výtah?\n- Ve kterém patře se nachází nový byt a je tam výtah? Případně dejte vědět, pokud půjde o rodinný dům.\n\nJakmile nám údaje pošlete, připravíme a zašleme Vám nabídku.\n\nDěkujeme a přejeme hezký den.\n\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P16",
+    "poptavka": "Dobrý den, stěhujeme se z Vizovic, byt 1+1. Děkuji za info.",
+    "akce": "doptat",
+    "odpoved": "Dobrý den,\n\nděkujeme za Vaši poptávku stěhování bytu 1+1 z Vizovic.\n\nAbychom mohli připravit nabídku, potřebovali bychom ještě doplnit několik údajů:\n\n- Kam se stěhujete (obec)?\n- V jakém patře se nachází současný byt a je v domě výtah?\n- V jakém patře se nachází nový byt a je tam výtah (případně zda jde o rodinný dům)?\n\nJakmile nám údaje doplníte, pošleme Vám nabídku.\n\nS pozdravem\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P22",
+    "poptavka": "Dobrý den, stěhujeme 3+1 ze Zlína do Otrokovic, 2. patro bez výtahu, do domu. Máme i pianino. Termín sobota 15. 3.",
+    "akce": "nabidka",
+    "odpoved": "Dobrý den,\n\nděkujeme za Vaši poptávku. Na základě zaslaných informací jsme pro Vás připravili orientační nabídku:\n\n- stěhování bytu 3+1 ze Zlína (2. patro bez výtahu) do rodinného domu v Otrokovicích,\n- termín v sobotu 15. 3., víkendový příplatek je již v ceně započten,\n- v ceně je zahrnuto jedno těžké zboží (pianino).\n\n- práce: 5 940 Kč\n- doprava: 300 Kč\n- patra bez výtahu: 300 Kč\n- těžké předměty: 2 500 Kč\n- víkendový příplatek: 1 808 Kč\nCelkem (orientačně): 10 848 Kč\n\nJde o orientační cenu, kterou potvrdíme po upřesnění detailů. V případě zájmu nám prosím napište, kolik zhruba máte věcí a krabic, zda je nutná demontáž nábytku a jaký je přístup k domu v Otrokovicích (schody, parkování, vzdálenost od vchodu).\n\nPřípadné dotazy rádi zodpovíme.\n\nS pozdravem\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P28",
+    "poptavka": "Dobrý den, dělali jste nám minulý týden stěhování a poškrábali jste stůl. Jak to budeme řešit? Novotná",
+    "akce": "predat_cloveku",
+    "odpoved": "Dobrý den, paní Novotná,\n\nděkujeme za Vaši zprávu a omlouváme se za nepříjemnosti se stolem. Vaši zprávu jsme přijali a ozve se Vám kolega, který se jí bude věnovat osobně.\n\nDěkujeme za trpělivost.\n\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P29",
+    "poptavka": "Dobrý den, nabízíme výhodné pojištění pro firmy. Máte zájem o nezávaznou schůzku?",
+    "akce": "bez_odpovedi",
+    "odpoved": null,
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P33",
+    "poptavka": "Hello, we are moving a 2+1 flat from Zlín to Brno, 3rd floor, no elevator. Could you send us a quote? Thanks, John",
+    "akce": "doptat",
+    "odpoved": "Hello John,\n\nThank you for your inquiry about moving your 2+1 flat from Zlín to Brno.\n\nTo prepare an accurate quote, we just need one more piece of information:\n\n- Which floor is the new flat on, and is there an elevator? (Or, if it is a family house, please let us know.)\n\nOnce we have this, we will send you our quote.\n\nBest regards,\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P34",
+    "poptavka": "Dobrý deň, sťahujeme sa zo Vsetína do Zlína, byt 3+1 na 4. poschodí, výťah nie je. Ďakujem, Kováčová",
+    "akce": "doptat",
+    "odpoved": "Dobrý deň, pani Kováčová,\n\nďakujeme za Vašu požiadavku na sťahovanie zo Vsetína do Zlína.\n\nAby sme pre Vás mohli pripraviť ponuku, potrebovali by sme doplniť ešte tento údaj:\n\n- V ktorom poschodí sa nachádza nový byt a je tam výťah? (Prípadne nám napíšte, ak ide o rodinný dom.)\n\nPo doplnení Vám pošleme ponuku.\n\nS pozdravom\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  },
+  {
+    "id": "P47",
+    "poptavka": "Dobrý den, kolik by stálo přestěhovat jen pianino z Kroměříže do Zlína, do 3. patra bez výtahu?",
+    "akce": "predat_cloveku",
+    "odpoved": "Dobrý den,\n\nděkujeme za Vaši poptávku na přestěhování pianina z Kroměříže do Zlína. Zprávu jsme přijali a ozve se Vám kolega, který se jí bude věnovat osobně.\n\nS pozdravem\nTým Stěhování Bobr",
+    "pisatel": "claude-sonnet-5-5",
+    "clovek": {
+      "cestina": null,
+      "osloveni": null,
+      "jen_podklady": null,
+      "ucel": null,
+      "ton": null,
+      "poznamka": ""
+    }
+  }
+]

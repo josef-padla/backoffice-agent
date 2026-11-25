@@ -1,0 +1,182 @@
+{
+  "P01": {
+    "akce": "nabidka",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Text je gramaticky správně, bez překlepů a špatných vazeb. Firma mluví jednotně v 1. osobě množného čísla („děkujeme“, „zpracováváme“, „potvrdíme“).",
+      "cestina": true,
+      "osloveni_zduvodneni": "Oslovení „pane Malý“ je příjmení ve správném 5. pádě, což je pro firemní e-mail vhodné.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Všechny údaje odpovídají poptávce: odkud a kam (Holešov → Zlín), byt 2+1, 2. patro bez výtahu, 4. patro s výtahem a 5. duben. Nic není vymyšlené ani zaměněné a odpověď neslibuje žádné slevy.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Nabídka shrnuje podklady a obsahuje rozpis ceny. Ten odpovídá textu: je tam práce, doprava a příplatek za patra bez výtahu, protože starý byt je ve 2. patře bez výtahu. U nového bytu je výtah, takže tam příplatek být nemá a správně chybí.",
+      "ucel": true,
+      "ton_zduvodneni": "Tón je zdvořilý a věcný a odpověď neobsahuje zbytečné fráze. Drobné opakování trasy v úvodu i v přehledu údajů nevadí.",
+      "ton": true
+    }
+  },
+  "P05": {
+    "akce": "nabidka",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Vazba „Orientační nabídku vycházíme z těchto údajů“ je chybná. Správně má být „Orientační nabídka vychází z…“ nebo „Při orientační nabídce vycházíme z…“. Dále je chybně „z Vsetína“, správně „ze Vsetína“.",
+      "cestina": false,
+      "osloveni_zduvodneni": "Oslovení „Dobrý den, paní Kolářová,“ obsahuje příjmení ve správném 5. pádě.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Údaje odpovídají poptávce: 1+1, Vsetín ve 3. patře bez výtahu, Zlín v přízemí. Odkud a kam ani patra nejsou zaměněné. Odpověď nic nevymýšlí, neslibuje slevy ani termíny.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Nabídka shrnuje podklady a obsahuje rozpis ceny (práce, doprava, patra), který odpovídá textu. Text výslovně uvádí, že jde o orientační cenu.",
+      "ucel": true,
+      "ton_zduvodneni": "Tón je zdvořilý a věcný a odpověď je přiměřeně stručná. Neobsahuje zbytečné fráze.",
+      "ton": true
+    }
+  },
+  "P11": {
+    "akce": "doptat",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Gramaticky je text v pořádku, ale věta „Ráda bych Vám připravila nabídku“ je v 1. osobě jednotného čísla („já“). Zbytek textu mluví za firmu („prosíme“, „připravíme“), takže osoba není jednotná.",
+      "cestina": false,
+      "osloveni_zduvodneni": "Jméno zákazníka neznáme, proto je neutrální „Dobrý den,“ správně.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Odpověď správně uvádí směr Zlín → Otrokovice a nic si nevymýšlí: žádné ceny, termíny ani sliby.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Odpověď se správně ptá na velikost bytu a na patro a výtah v současném bytě. Neptá se ale na patro a výtah v cílovém místě v Otrokovicích, které na cenu působí stejně, ani na termín stěhování. Doptání tedy nepokrývá všechny chybějící údaje.",
+      "ucel": false,
+      "ton_zduvodneni": "Tón je zdvořilý, stručný a věcný, bez zbytečných frází.",
+      "ton": true
+    }
+  },
+  "P12": {
+    "akce": "doptat",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Text je gramaticky správně, bez překlepů a špatných vazeb. Firma mluví jednotně v 1. osobě množného čísla („děkujeme“, „připravíme“).",
+      "cestina": true,
+      "osloveni_zduvodneni": "„Dobrý den, Hano,“ je oslovení holým křestním jménem, a to je ve firemním e-mailu nevhodné. Známe jen křestní jméno, takže mělo být „Dobrý den, paní Hano,“.",
+      "osloveni": false,
+      "jen_podklady_zduvodneni": "Odpověď převzala z poptávky jen byt 3+1 a termín koncem měsíce. Nic si nevymýšlí, nic neslibuje a nic nepřekrucuje.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Odpověď se správně ptá, odkud a kam se zákaznice stěhuje a na patro a výtah v současném bytě. Patro a výtah v cílovém bytě ale také chybí a pro výpočet ceny jsou stejně potřeba. Doptání tedy nepokrývá všechny chybějící údaje.",
+      "ucel": false,
+      "ton_zduvodneni": "Tón je zdvořilý, stručný a věcný, bez zbytečných frází.",
+      "ton": true
+    }
+  },
+  "P14": {
+    "akce": "doptat",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Text je gramaticky správný, bez překlepů a chybných vazeb. Firma mluví jednotně v 1. osobě množného čísla („děkujeme“, „připravíme“).",
+      "cestina": true,
+      "osloveni_zduvodneni": "Jméno zákazníka neznáme, proto je neutrální „Dobrý den,“ správně.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Odpověď uvádí jen byt 2+kk ve 2. patře a okolí Zlína, tedy údaje z poptávky. Nic si nevymýšlí, nic neslibuje a nic nezaměňuje.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Dotaz na obec, odkud se zákazník stěhuje, je správný, protože tento údaj chybí. Odpověď se ale ptá i na cílovou obec, i když zákazník výslovně napsal, že ji ještě přesně neví, a jako orientaci už uvedl okolí Zlína. Ani zmírnění („stačí zatím orientační obec“) nemění, že se odpověď ptá na údaj, o kterém zákazník napsal, že ho nezná. Měla vycházet z okolí Zlína a ptát se jen na skutečně chybějící údaje.",
+      "ucel": false,
+      "ton_zduvodneni": "Tón je zdvořilý, stručný a věcný, bez zbytečných frází.",
+      "ton": true
+    }
+  },
+  "P16": {
+    "akce": "doptat",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Čeština je bez chyb, vazby i slovosled jsou správné a firma důsledně mluví v 1. osobě množného čísla (děkujeme, potřebujeme, připravíme).",
+      "cestina": true,
+      "osloveni_zduvodneni": "Jméno zákazníka neznáme, proto je neutrální „Dobrý den,“ správně.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Odpověď zmiňuje jen Vizovice jako místo, odkud se zákazník stěhuje, což sedí s poptávkou. Nic si nevymýšlí ani neslibuje (žádné ceny, slevy ani termíny).",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Odpověď se správně ptá, kam se zákazník stěhuje, a na patro a výtah v současném bytě. Neptá se ale na patro a výtah v novém bytě, které také chybí. Na údaj, který zákazník uvedl (1+1), se zbytečně neptá. Kvůli chybějícímu dotazu na patro a výtah v cíli ale nejsou pokryté všechny chybějící údaje.",
+      "ucel": false,
+      "ton_zduvodneni": "Tón je zdvořilý a stručný. Úvodní poděkování za poptávku i za zájem o služby je trochu šablonovité, ale v únosné míře.",
+      "ton": true
+    }
+  },
+  "P22": {
+    "akce": "nabidka",
+    "hodnoceni": {
+      "cestina_zduvodneni": "V odrážce stojí „stěhování z Zlína do Otrokovic“. Správná vazba je „ze Zlína“. Jinde text používá správně „ze Zlína“, takže tvary nejsou jednotné. Firma mluví v množném čísle správně.",
+      "cestina": false,
+      "osloveni_zduvodneni": "Zákazník neuvedl jméno, a tak je neutrální „Dobrý den,“ správné.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Trasa, dispozice, patro, pianino i termín odpovídají poptávce. Odpověď si nic nevymýšlí a nic nezaměňuje. Údaj „do domu“ sice chybí, ale poptávku to nepřekrucuje.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Text uvádí přepravu pianina jako součást nabídky. V rozpisu ceny ale pianino chybí (jen práce, doprava a patra), takže rozpis neodpovídá tomu, co text slibuje.",
+      "ucel": false,
+      "ton_zduvodneni": "Tón je zdvořilý, stručný a věcný, bez zbytečných frází.",
+      "ton": true
+    }
+  },
+  "P28": {
+    "akce": "predat_cloveku",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Text je gramaticky správně a bez překlepů a firma mluví v 1. osobě množného čísla („děkujeme“, „přijali jsme“). Slovosled „aby celou situaci s Vámi projednal“ je o něco méně obvyklý než „aby s Vámi celou situaci projednal“, ale je přijatelný.",
+      "cestina": true,
+      "osloveni_zduvodneni": "Zákaznice se podepsala příjmením Novotná. Oslovení „paní Novotná“ je ve správném 5. pádě a do firemního e-mailu se hodí.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Odpověď nic nevymýšlí: neslibuje náhradu ani termín a poptávku nepřekrucuje. „Osobně“ jen upřesňuje, že se kolega ozve sám.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Jde o předání člověku. Odpověď potvrzuje přijetí zprávy a říká, že se ozve kolega. Nic dalšího neřeší, a tak to má být.",
+      "ucel": true,
+      "ton_zduvodneni": "Tón je zdvořilý, stručný a lidský. Neobsahuje zbytečné fráze ani přehnanou formálnost.",
+      "ton": true
+    }
+  },
+  "P29": {
+    "akce": "predat_cloveku",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Čeština je správná, bez chyb. Firma mluví v 1. osobě množného čísla.",
+      "cestina": true,
+      "osloveni_zduvodneni": "Jméno odesílatele neznáme, proto je neutrální „Dobrý den,“ v pořádku.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Odpověď nic nevymýšlí, jen potvrzuje přijetí zprávy a slibuje, že se ozve kolega, což u předání patří k šabloně.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Jde o předání člověku: odpověď potvrzuje přijetí a oznamuje, že se ozve kolega. Nic dalšího neslibuje, takže přesně plní, co má.",
+      "ucel": true,
+      "ton_zduvodneni": "Odpověď je stručná a zdvořilá. „Děkujeme“ a „potvrzujeme přijetí“ se trochu opakují, ale nejde o zbytečné ani přehnaně formální fráze.",
+      "ton": true
+    }
+  },
+  "P33": {
+    "akce": "nabidka",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Zákazník psal anglicky a odpověď je ve správné, přirozené angličtině. Firma mluví jednotně za sebe jako „we“. Česky psané řádky s cenou doplnil kód, proto je nehodnotíme. Malé písmeno v „thank you“ po oslovení je v anglickém dopise přijatelné.",
+      "cestina": true,
+      "osloveni_zduvodneni": "V angličtině je oslovení „Hello John,“ v pořádku.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Shrnutí sedí s poptávkou: stěhování ze Zlína do Brna, byt 2+1, 3. patro bez výtahu. U patra zákazník neuvedl, zda jde o místo nakládky, nebo vykládky, a odpověď si to nedomýšlí. Nejsou v ní vymyšlené slevy, termíny ani sliby.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Nabídka shrne podklady a obsahuje rozpis ceny, který odpovídá textu: práce, doprava a příplatek za patra bez výtahu. Cenu jasně označuje jako orientační. Doplňující otázky na termín a další okolnosti nabídku vhodně doplňují.",
+      "ucel": true,
+      "ton_zduvodneni": "Tón je zdvořilý, stručný a lidský, bez zbytečných frází.",
+      "ton": true
+    }
+  },
+  "P34": {
+    "akce": "nabidka",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Je tu překlep „ddopyt“ a chybná shoda „Vašu dopyt“: „dopyt“ je mužského rodu, správně tedy „Váš dopyt“. Tvar „rada/radi“ je nedotažená šablona a firma má jednotně mluvit v množném čísle („radi“).",
+      "cestina": false,
+      "osloveni_zduvodneni": "Oslovení „Dobrý deň, pani Kováčová“ je ve slovenštině správné a vhodné.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Poptávka uvádí jen „byt 3+1 na 4. poschodí“ a neříká, jestli jde o byt ve Vsetíně, nebo ve Zlíně. Odpověď to rozhodně přiřazuje cíli („do bytu 3+1 na 4. poschodí“, „sťahovanie na 4. poschodie“). To nemá oporu v poptávce a hrozí záměna místa, kde je patro.",
+      "jen_podklady": false,
+      "ucel_zduvodneni": "Nabídka shrnuje podklady a rozpis ceny odpovídá textu (práce, doprava, patra bez výtahu). Doplňující otázky rozumně upřesňují cenu.",
+      "ucel": true,
+      "ton_zduvodneni": "Tón je zdvořilý, věcný a přiměřeně stručný, bez zbytečných frází.",
+      "ton": true
+    }
+  },
+  "P47": {
+    "akce": "predat_cloveku",
+    "hodnoceni": {
+      "cestina_zduvodneni": "Text je gramaticky správný, nemá překlepy ani špatné vazby a firma mluví v 1. osobě množného čísla („děkujeme“, „přijali jsme“).",
+      "cestina": true,
+      "osloveni_zduvodneni": "Jméno zákazníka v poptávce není, proto je neutrální „Dobrý den,“ správně.",
+      "osloveni": true,
+      "jen_podklady_zduvodneni": "Odpověď neuvádí žádné vymyšlené údaje, ceny ani termíny. Věta „vyřeší osobně“ jen popisuje, že poptávku převezme kolega, nic konkrétního neslibuje.",
+      "jen_podklady": true,
+      "ucel_zduvodneni": "Jde o předání: odpověď potvrzuje přijetí poptávky a že se ozve kolega. Nic dalšího nepřidává.",
+      "ucel": true,
+      "ton_zduvodneni": "Tón je zdvořilý, stručný a lidský, bez zbytečných frází.",
+      "ton": true
+    }
+  }
+}

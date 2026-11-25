@@ -59,47 +59,48 @@ def ohodnot(polozka, model, pokusy=2):
     raise RuntimeError(f"{model} nevrátil platné hodnocení ani na {pokusy}. pokus ({polozka['id']})")
 
 
-data = json.loads(ODPOVEDI.read_text(encoding="utf-8"))
+if __name__ == "__main__":
+    data = json.loads(ODPOVEDI.read_text(encoding="utf-8"))
 
-for model in MODELY:
-    print(f"\n===== {model} =====")
-    shody = celkem = prehlednuto = prisnejsi = 0
-    po_kriteriich = {k: [0, 0] for k in KRITERIA}  # [shoda, celkem]
-    rozdily, vysledky = [], []
-    tokeny_in = tokeny_out = 0
+    for model in MODELY:
+        print(f"\n===== {model} =====")
+        shody = celkem = prehlednuto = prisnejsi = 0
+        po_kriteriich = {k: [0, 0] for k in KRITERIA}  # [shoda, celkem]
+        rozdily, vysledky = [], []
+        tokeny_in = tokeny_out = 0
 
-    for p in data:
-        h, usage = ohodnot(p, model)
-        tokeny_in += usage.input_tokens
-        tokeny_out += usage.output_tokens
-        vysledky.append({"id": p["id"], "hodnotitel": h})
-        for k in KRITERIA:
-            clovek, ai = p["clovek"][k], h[k]
-            celkem += 1
-            po_kriteriich[k][1] += 1
-            if clovek == ai:
-                shody += 1
-                po_kriteriich[k][0] += 1
-            else:
-                if ai and not clovek:
-                    prehlednuto += 1
-                    druh = "AI PŘEHLÉDLA chybu"
+        for p in data:
+            h, usage = ohodnot(p, model)
+            tokeny_in += usage.input_tokens
+            tokeny_out += usage.output_tokens
+            vysledky.append({"id": p["id"], "hodnotitel": h})
+            for k in KRITERIA:
+                clovek, ai = p["clovek"][k], h[k]
+                celkem += 1
+                po_kriteriich[k][1] += 1
+                if clovek == ai:
+                    shody += 1
+                    po_kriteriich[k][0] += 1
                 else:
-                    prisnejsi += 1
-                    druh = "AI je přísnější"
-                rozdily.append(f"{p['id']} {k}: {druh}\n     AI: {h[k + '_zduvodneni']}\n     člověk: {p['clovek']['poznamka']}")
-        print(".", end="", flush=True)
+                    if ai and not clovek:
+                        prehlednuto += 1
+                        druh = "AI PŘEHLÉDLA chybu"
+                    else:
+                        prisnejsi += 1
+                        druh = "AI je přísnější"
+                    rozdily.append(f"{p['id']} {k}: {druh}\n     AI: {h[k + '_zduvodneni']}\n     člověk: {p['clovek']['poznamka']}")
+            print(".", end="", flush=True)
 
-    print(f"\nShoda s člověkem: {shody}/{celkem} ({shody / celkem:.0%})")
-    print(f"AI přehlédla chybu, kterou našel člověk: {prehlednuto}×")
-    print(f"AI přísnější než člověk: {prisnejsi}×")
-    print("Podle kritérií:")
-    for k, (ok, n) in po_kriteriich.items():
-        print(f"  {k}: {ok}/{n}")
-    print(f"Tokeny: {tokeny_in} in / {tokeny_out} out")
-    print("Neshody:")
-    for r in rozdily:
-        print(" -", r)
+        print(f"\nShoda s člověkem: {shody}/{celkem} ({shody / celkem:.0%})")
+        print(f"AI přehlédla chybu, kterou našel člověk: {prehlednuto}×")
+        print(f"AI přísnější než člověk: {prisnejsi}×")
+        print("Podle kritérií:")
+        for k, (ok, n) in po_kriteriich.items():
+            print(f"  {k}: {ok}/{n}")
+        print(f"Tokeny: {tokeny_in} in / {tokeny_out} out")
+        print("Neshody:")
+        for r in rozdily:
+            print(" -", r)
 
-    soubor = EVALY / "hodnoceni" / f"hodnotitel_{model}.json"
-    soubor.write_text(json.dumps(vysledky, ensure_ascii=False, indent=2), encoding="utf-8")
+        soubor = EVALY / "hodnoceni" / f"hodnotitel_{model}.json"
+        soubor.write_text(json.dumps(vysledky, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -92,7 +92,9 @@ def sestav_podklady(udaje, akce, duvody, rozhodnuti):
     return "\n".join(radky)
 
 
-def zpracuj_poptavku(text, model="claude-haiku-5-5"):
+def zpracuj_poptavku(text, model="claude-haiku-5-5", model_pisatel=None):
+    """model = čte poptávku (extrakce), model_pisatel = píše odpověď (když není zadán, stejný jako model)."""
+    pisatel = model_pisatel or model
     start = time.time()
     kroky = []
 
@@ -135,8 +137,8 @@ def zpracuj_poptavku(text, model="claude-haiku-5-5"):
         hotova, problemy = None, []
     else:
         podklady = sestav_podklady(udaje, akce, duvody, rozhodnuti)
-        navrh, usage2 = napis_odpoved(text, akce, podklady, model)
-        kroky.append({"krok": "Návrh odpovědi", "kdo": "AI", "model": model, "podklady": podklady,
+        navrh, usage2 = napis_odpoved(text, akce, podklady, pisatel)
+        kroky.append({"krok": "Návrh odpovědi", "kdo": "AI", "model": pisatel, "podklady": podklady,
                       "vystup": navrh,
                       "tokeny": {"vstup": usage2.input_tokens, "vystup": usage2.output_tokens}})
         hotova, problemy = zkontroluj_odpoved(navrh, akce, rozpis)

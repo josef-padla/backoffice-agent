@@ -9,8 +9,9 @@ from backoffice_agent.extrakce import vytahni_udaje
 EVALY = Path(__file__).resolve().parent  # složka evaly/
 
 MODEL = "claude-haiku-5-5"
-OPAKOVANI = 3  # kolikrát projedeme celou sadu – AI neodpovídá pokaždé stejně
 SADA = sys.argv[1] if len(sys.argv) > 1 else "hlavni"  # uv run evaly/eval.py holdout_v2
+# Kolikrát projedeme celou sadu. Při ladění stačí 1 (levné), na finální měření 3: uv run evaly/eval.py hlavni 3
+OPAKOVANI = int(sys.argv[2]) if len(sys.argv) > 2 else 1
 
 # Načte všechny soubory zvolené sady ze složky evaly/sady/<SADA>/
 sada = []
@@ -27,7 +28,7 @@ def shoda(ocekavano, dostal):
 behy = []                                  # výsledek každého běhu
 vysledky_poptavek = defaultdict(list)      # id -> [True/False za každý běh]
 chyby = []
-tokeny_in = tokeny_out = 0
+tokeny_in = tokeny_out = tokeny_cache = 0
 start = time.time()
 
 for beh in range(1, OPAKOVANI + 1):
@@ -38,6 +39,7 @@ for beh in range(1, OPAKOVANI + 1):
         udaje, usage = vytahni_udaje(p["text"], MODEL)
         tokeny_in += usage.input_tokens
         tokeny_out += usage.output_tokens
+        tokeny_cache += getattr(usage, "cache_read_input_tokens", 0) or 0
 
         vse_ok = True
         for pole, ocek in p["ocekavano"].items():
@@ -70,6 +72,7 @@ print(f"Průměr poptávek bez chyby: {sum(procenta) / len(procenta):.1%} "
       f"(nejhorší běh {min(procenta):.0%}, nejlepší {max(procenta):.0%})")
 print(f"Nestabilní poptávky (jednou dobře, jednou špatně): {', '.join(nestabilni) or 'žádné'}")
 print(f"Vždy špatně: {', '.join(vzdy_spatne) or 'žádné'}")
+print(f"Tokeny z cache (levné): {tokeny_cache}")
 print(f"Tokeny: {tokeny_in} in / {tokeny_out} out (průměr {tokeny_in // volani} / {tokeny_out // volani} na poptávku)")
 print(f"Čas: {doba:.1f} s (průměr {doba / volani:.1f} s na poptávku)")
 
@@ -83,7 +86,7 @@ soubor.write_text(json.dumps({
     "sada": SADA, "model": MODEL, "opakovani": OPAKOVANI, "behy": behy,
     "prumer_poptavek_bez_chyby": round(sum(procenta) / len(procenta), 3),
     "nestabilni": nestabilni, "vzdy_spatne": vzdy_spatne,
-    "tokeny_in": tokeny_in, "tokeny_out": tokeny_out,
+    "tokeny_in": tokeny_in, "tokeny_cache": tokeny_cache, "tokeny_out": tokeny_out,
     "doba_s": round(doba, 1), "chyby": chyby,
 }, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"\nUloženo do {soubor}")
