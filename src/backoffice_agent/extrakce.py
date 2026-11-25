@@ -78,7 +78,11 @@ Pravidla oboru (české zvyklosti):
 - Patra: „N. patro" zapisuj jako N, beze změny. Přízemí = 0.
 - Zkratky: „p." = patro, „příz." = přízemí, „výt." = výtah.
 - Velikost opisem: „X pokoje a samostatná kuchyň" = X+1, „X pokoje s kuchyňským koutem" = X+kk.
-- Rodinný dům = „dum"."""
+- Rodinný dům = „dum".
+
+Obce, kam firma jezdí (pokud zákazník píše o některé z nich, napiš ji PŘESNĚ v tomto tvaru):
+""" + ", ".join(firma["mesta"]) + """
+Jiné obce napiš v 1. pádě tak, jak se skutečně jmenují. Neodhaduj podobně znějící obec."""
 
 
 def predzpracuj(text):

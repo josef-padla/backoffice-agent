@@ -34,3 +34,9 @@ def test_surovy_vystup_se_nemeni():
     s = surove(odkud="Frýšták", typ_zakazky="jednotlive_kusy")
     zkontroluj(s)
     assert s["odkud"] == "Frýšták" and s["velikost"] == "2+1"
+
+
+def test_prompt_obsahuje_vsechny_obce_firmy():
+    # Seznam obcí v promptu se skládá z konfigurace firmy – když firma přidá obec, musí se objevit i tady
+    from backoffice_agent.extrakce import SYSTEM, firma
+    assert all(obec in SYSTEM for obec in firma["mesta"])

@@ -1,0 +1,32 @@
+{
+  "sada": "hlavni",
+  "model": "claude-haiku-5-5",
+  "opakovani": 3,
+  "behy": [
+    {
+      "spravna_pole": 299,
+      "celkem_pole": 299,
+      "spravne_poptavky": 50,
+      "celkem_poptavek": 50
+    },
+    {
+      "spravna_pole": 299,
+      "celkem_pole": 299,
+      "spravne_poptavky": 50,
+      "celkem_poptavek": 50
+    },
+    {
+      "spravna_pole": 299,
+      "celkem_pole": 299,
+      "spravne_poptavky": 50,
+      "celkem_poptavek": 50
+    }
+  ],
+  "prumer_poptavek_bez_chyby": 1.0,
+  "nestabilni": [],
+  "vzdy_spatne": [],
+  "tokeny_in": 362568,
+  "tokeny_out": 77825,
+  "doba_s": 314.2,
+  "chyby": []
+}
