@@ -57,6 +57,26 @@ def napis_odpoved(poptavka, akce, podklady, model="claude-haiku-5-5"):
     return text.strip(), odpoved.usage
 
 
+def uprav_odpoved(poptavka, navrh, pokyn, model="claude-sonnet-5-5"):
+    """Fialový krok: AI přepíše návrh podle pokynu člověka (např. „buď stručnější").
+    Platí stejná pravidla jako při psaní – a kód výsledek znovu zkontroluje."""
+    odpoved = client.messages.create(
+        model=model,
+        max_tokens=800,
+        system=[{"type": "text", "text": SYSTEM_ODPOVED, "cache_control": {"type": "ephemeral"}}],
+        messages=[{"role": "user", "content": (
+            f"<poptavka>\n{poptavka}\n</poptavka>\n\n"
+            f"<navrh>\n{navrh}\n</navrh>\n\n"
+            f"<pokyn_zamestnance>\n{pokyn}\n</pokyn_zamestnance>\n\n"
+            f"Zaměstnanec firmy chce návrh odpovědi upravit podle pokynu. Uprav jen to, o co žádá, zbytek ponech. "
+            f"Pokud je v návrhu značka {ZNACKA}, ponech ji tam přesně jednou a nepiš žádné vlastní částky – "
+            f"cenu doplní systém. Vrať jen upravený text e-mailu."
+        )}],
+    )
+    text = next(blok.text for blok in odpoved.content if blok.type == "text")
+    return text.strip(), odpoved.usage
+
+
 # Popisky rozpisu v jazyce zákazníka. Čísla dál počítá jen kód – překládají se jen názvy.
 POPISKY = {
     "cs": {"celkem": "Celkem (orientačně)", "mena": "Kč"},

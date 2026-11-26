@@ -146,7 +146,7 @@ def zpracuj_poptavku(text, model="claude-haiku-5-5", model_pisatel=None):
 
     # 5. + 6. Návrh odpovědi (AI) a její kontrola (kód) – u spamu neodpovídáme vůbec
     if akce == "bez_odpovedi":
-        hotova, problemy = None, []
+        navrh, hotova, problemy = None, None, []
     else:
         podklady = sestav_podklady(udaje, akce, duvody, rozhodnuti)
         navrh, usage2 = napis_odpoved(text, akce, podklady, pisatel)
@@ -163,6 +163,8 @@ def zpracuj_poptavku(text, model="claude-haiku-5-5", model_pisatel=None):
         "akce": akce,
         "odpoved": hotova,
         "k_rucni_uprave": bool(problemy),
+        "navrh": navrh,      # text od AI ještě se značkou {{CENA}} – potřeba pro pozdější úpravy
+        "rozpis": rozpis,    # rozpis ceny od kódu
         "kroky": kroky,
         "doba_s": round(time.time() - start, 2),
     }
