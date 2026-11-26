@@ -116,11 +116,13 @@ async def tlacitko(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await dotaz.edit_message_text(dotaz.message.text + "\n\n✏️ UPRAVUJE SE – nová verze přijde níž.")
         await dotaz.message.reply_text("Napiš, co mám změnit (např. „buď stručnější“ nebo „přidej, že termín potvrdíme zítra“).")
         return
-    zaznam = cekajici.pop(id_navrhu, None)
-    if zaznam is None:
-        await dotaz.edit_message_reply_markup(None)
-        await dotaz.message.reply_text("Tenhle návrh už je vyřízený (nebo se bot mezitím restartoval).")
+    if volba == "edit":
+        # Na úpravu potřebujeme uložený návrh. Na bezplatném serveru se po usnutí paměť smaže.
+        await dotaz.message.reply_text(
+            "Tenhle návrh už nemám v paměti (server mezitím usnul). Pošli poptávku znovu, prosím.")
         return
+    # Schválit/zahodit jde i bez uloženého návrhu – stačí upravit zprávu v Telegramu.
+    cekajici.pop(id_navrhu, None)
 
     if volba == "ok":
         stav = "✅ SCHVÁLENO – v ostrém provozu by se teď e-mail odeslal zákazníkovi."
@@ -130,11 +132,16 @@ async def tlacitko(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await dotaz.edit_message_text(dotaz.message.text + f"\n\n{stav}")
 
 
-def main():
-    app = Application.builder().token(TOKEN).build()
+def pridej_handlery(app):
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, zprava))
     app.add_handler(CallbackQueryHandler(tlacitko))
+    return app
+
+
+def main():
+    """Lokálně (na Macu): bot se sám ptá Telegramu na nové zprávy (polling)."""
+    app = pridej_handlery(Application.builder().token(TOKEN).build())
     print("Bot běží. Zastavíš ho Ctrl+C.")
     app.run_polling()
 

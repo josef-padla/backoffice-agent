@@ -1,0 +1,23 @@
+# Render Blueprint: jedna bezplatná webová služba = webové demo + Telegram bot (webhook).
+services:
+  - type: web
+    name: bobr-backoffice
+    runtime: python
+    plan: free
+    buildCommand: pip install uv && uv sync --frozen --no-dev
+    startCommand: uv run --no-dev uvicorn backoffice_agent.server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /zdravi
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: DEMO_DENNI_LIMIT
+        value: "30"
+      # Tajné klíče vyplní majitel ručně v nastavení Renderu (nikdy ne do gitu):
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
