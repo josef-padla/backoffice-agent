@@ -11,6 +11,7 @@ from datetime import datetime
 from backoffice_agent.cena import KOREN, spocitej_cenu
 from backoffice_agent.extrakce import firma, patra_bez_vytahu, predzpracuj, zavolej_ai, zkontroluj
 from backoffice_agent.mesta import over_mesto
+from backoffice_agent.rag import najdi_v_faq
 from backoffice_agent.odpoved import napis_odpoved, rozpis_ceny, zkontroluj_odpoved
 
 LOGY = KOREN / "logy"
@@ -149,6 +150,13 @@ def zpracuj_poptavku(text, model="claude-haiku-5-5", model_pisatel=None):
         navrh, hotova, problemy = None, None, []
     else:
         podklady = sestav_podklady(udaje, akce, duvody, rozhodnuti)
+        # RAG: kód najde v příručce firmy, co by mohlo odpovídat na dotazy zákazníka
+        faq = najdi_v_faq(text)
+        kroky.append({"krok": "Hledání v FAQ", "kdo": "kód",
+                      "nalezeno": [{"otazka": f["otazka"], "skore": f["skore"]} for f in faq]})
+        if faq:
+            podklady += "\n\nInformace z FAQ firmy (použij jen na to, na co se zákazník ptá):\n" + "\n".join(
+                f"- {f['otazka']} {f['odpoved']}" for f in faq)
         navrh, usage2 = napis_odpoved(text, akce, podklady, pisatel)
         kroky.append({"krok": "Návrh odpovědi", "kdo": "AI", "model": pisatel, "podklady": podklady,
                       "vystup": navrh,
@@ -203,6 +211,11 @@ def vypis(zaznam):
                 print(f"   - {d}")
             if k["akce"] == "nabidka":
                 print(f"  celkem: {k['celkem']} Kč")
+        elif k["krok"] == "Hledání v FAQ":
+            for f in k["nalezeno"]:
+                print(f"  nalezeno: {f['otazka']} (skóre {f['skore']})")
+            if not k["nalezeno"]:
+                print("  nic relevantního")
         elif k["krok"] == "Návrh odpovědi":
             print("  podklady pro AI:")
             for r in k["podklady"].splitlines():

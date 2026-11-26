@@ -1,0 +1,22 @@
+[
+  {"dotaz": "mate i krabice? nemam zadny", "cil": "Půjčujete nebo prodáváte stěhovací krabice?"},
+  {"dotaz": "Šlo by, abyste nám věci i zabalili? Máme hodně skla a porcelánu.", "cil": "Umíte věci i zabalit?"},
+  {"dotaz": "Je možné objednat demontáž a opětovnou montáž větší skříně?", "cil": "Rozeberete a znovu složíte nábytek?"},
+  {"dotaz": "co kdyz se mi neco pri stehovani poskodi, mate pojisteni?", "cil": "Jste pojištění? Co když se něco rozbije?"},
+  {"dotaz": "Můžu platit kartou, nebo jen hotově?", "cil": "Jak se platí?"},
+  {"dotaz": "Potřebuji doklad pro zaměstnavatele, vystavíte fakturu na firmu?", "cil": "Vystavujete faktury?"},
+  {"dotaz": "Kolik dní předem je potřeba si vás objednat?", "cil": "Jak dlouho dopředu se musím objednat?"},
+  {"dotaz": "šlo by to v neděli?", "cil": "Stěhujete i o víkendu a o svátcích?"},
+  {"dotaz": "Bude to nakonec stát víc než v nabídce?", "cil": "Je cena v nabídce konečná?"},
+  {"dotaz": "Kdyby se nám změnil termín, dá se to přesunout?", "cil": "Můžu objednávku zrušit nebo přesunout?"},
+  {"dotaz": "Kolik pracovníků přijede?", "cil": "Kolik lidí přijede?"},
+  {"dotaz": "stěhujete i pianina? je dost těžké", "cil": "Přestěhujete piano, trezor nebo jiný těžký předmět?"},
+  {"dotaz": "Realizujete aj sťahovanie do zahraničia, do Trenčína?", "cil": "Stěhujete i mimo Zlínský kraj nebo do zahraničí?"},
+  {"dotaz": "Starou sedačku bych chtěl vyhodit, odvezete ji?", "cil": "Odvezete i starý nábytek k likvidaci?"},
+  {"dotaz": "Bylo by možné předem domluvit prohlídku, abyste posoudili, zda půjde nábytek vynést?", "cil": "Přijedete se nejdřív podívat (prohlídka)?"},
+  {"dotaz": "Budu v práci, musím tam být, nebo stačí předat klíče?", "cil": "Musím být u stěhování osobně?"},
+  {"dotaz": "Potřebujeme přestěhovat malou kavárnu, děláte i provozovny?", "cil": "Stěhujete i kanceláře a provozovny?"},
+  {"dotaz": "Mám hodně květin, vezmete je?", "cil": "Převezete i rostliny nebo zvířata?"},
+  {"dotaz": "Dobrý den, stěhujeme byt 2+1 z Otrokovic do Zlína, 3. patro s výtahem.", "cil": null},
+  {"dotaz": "Kolik stojí hodina stěhování?", "cil": null}
+]
