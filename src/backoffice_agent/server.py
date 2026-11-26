@@ -8,6 +8,8 @@ Rozdíl proti spuštění na Macu:
 Spuštění lokálně:  uv run uvicorn backoffice_agent.server:app --reload
 """
 import asyncio
+import hashlib
+import logging
 import os
 import time
 from collections import defaultdict, deque
@@ -25,7 +27,10 @@ from backoffice_agent.pipeline import zpracuj_poptavku
 from backoffice_agent.telegram_bot import TOKEN, pridej_handlery
 
 VEREJNA_ADRESA = os.environ.get("RENDER_EXTERNAL_URL")   # Render ji nastaví sám
-TAJNY_KLIC = os.environ.get("WEBHOOK_SECRET", "")        # aby nám zprávy „od Telegramu" nemohl posílat kdokoli
+# Aby nám zprávy „od Telegramu" nemohl posílat kdokoli. Telegram povoluje jen písmena, čísla, _ a -,
+# proto z náhodné hodnoty od Renderu uděláme otisk (hash), který tyhle znaky splňuje vždy.
+_tajne = os.environ.get("WEBHOOK_SECRET", "")
+TAJNY_KLIC = hashlib.sha256(_tajne.encode()).hexdigest() if _tajne else ""
 DENNI_LIMIT = int(os.environ.get("DEMO_DENNI_LIMIT", "30"))  # ochrana kreditů: max. zpracování dema za den
 MAX_ZA_MINUTU_Z_IP = 3
 
@@ -37,8 +42,12 @@ async def zivotni_cyklus(app):
     await bot.initialize()
     await bot.start()
     if VEREJNA_ADRESA:
-        await bot.bot.set_webhook(f"{VEREJNA_ADRESA}/telegram", secret_token=TAJNY_KLIC or None,
-                                  allowed_updates=["message", "callback_query"])
+        try:
+            await bot.bot.set_webhook(f"{VEREJNA_ADRESA}/telegram", secret_token=TAJNY_KLIC or None,
+                                      allowed_updates=["message", "callback_query"])
+        except Exception:
+            # Když selže Telegram, webové demo má běžet dál.
+            logging.exception("Nepodařilo se nastavit Telegram webhook")
     yield
     await bot.stop()
     await bot.shutdown()
